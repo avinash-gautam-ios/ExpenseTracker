@@ -9,13 +9,23 @@
 /* Begin PBXBuildFile section */
 		E1572BAB28B4006600800780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BAA28B4006600800780 /* AppDelegate.swift */; };
 		E1572BAD28B4006600800780 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BAC28B4006600800780 /* SceneDelegate.swift */; };
-		E1572BAF28B4006600800780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BAE28B4006600800780 /* ViewController.swift */; };
-		E1572BB228B4006600800780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1572BB028B4006600800780 /* Main.storyboard */; };
 		E1572BB428B4006600800780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1572BB328B4006600800780 /* Assets.xcassets */; };
 		E1572BB728B4006600800780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1572BB528B4006600800780 /* LaunchScreen.storyboard */; };
 		E1572BC228B4006600800780 /* ExpenseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BC128B4006600800780 /* ExpenseTrackerTests.swift */; };
 		E1572BCC28B4006600800780 /* ExpenseTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BCB28B4006600800780 /* ExpenseTrackerUITests.swift */; };
 		E1572BCE28B4006600800780 /* ExpenseTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BCD28B4006600800780 /* ExpenseTrackerUITestsLaunchTests.swift */; };
+		E1572BED28B4026800800780 /* ExpensesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BEC28B4026800800780 /* ExpensesListViewController.swift */; };
+		E1572BEF28B4028F00800780 /* ExpensesListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BEE28B4028F00800780 /* ExpensesListProtocols.swift */; };
+		E1572BF128B4039C00800780 /* ExpensesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF028B4039C00800780 /* ExpensesListInteractor.swift */; };
+		E1572BF328B403A900800780 /* ExpensesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF228B403A900800780 /* ExpensesListPresenter.swift */; };
+		E1572BF528B403B900800780 /* ExpensesListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF428B403B900800780 /* ExpensesListEntity.swift */; };
+		E1572BF728B403C400800780 /* ExpensesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF628B403C400800780 /* ExpensesListRouter.swift */; };
+		E1572BF928B40AD600800780 /* AddExpenseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF828B40AD600800780 /* AddExpenseEntity.swift */; };
+		E1572BFB28B40AE000800780 /* AddExpensePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BFA28B40AE000800780 /* AddExpensePresenter.swift */; };
+		E1572BFD28B40AEC00800780 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BFC28B40AEC00800780 /* AddExpenseViewController.swift */; };
+		E1572BFF28B40AFB00800780 /* AddExpenseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BFE28B40AFB00800780 /* AddExpenseProtocols.swift */; };
+		E1572C0128B40B0700800780 /* AddExpenseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0028B40B0700800780 /* AddExpenseInteractor.swift */; };
+		E1572C0328B40B1000800780 /* AddExpenseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0228B40B1000800780 /* AddExpenseRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +49,6 @@
 		E1572BA728B4006600800780 /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1572BAA28B4006600800780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1572BAC28B4006600800780 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E1572BAE28B4006600800780 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E1572BB128B4006600800780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1572BB328B4006600800780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1572BB628B4006600800780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1572BB828B4006600800780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +57,18 @@
 		E1572BC728B4006600800780 /* ExpenseTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1572BCB28B4006600800780 /* ExpenseTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerUITests.swift; sourceTree = "<group>"; };
 		E1572BCD28B4006600800780 /* ExpenseTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E1572BEC28B4026800800780 /* ExpensesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListViewController.swift; sourceTree = "<group>"; };
+		E1572BEE28B4028F00800780 /* ExpensesListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListProtocols.swift; sourceTree = "<group>"; };
+		E1572BF028B4039C00800780 /* ExpensesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListInteractor.swift; sourceTree = "<group>"; };
+		E1572BF228B403A900800780 /* ExpensesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListPresenter.swift; sourceTree = "<group>"; };
+		E1572BF428B403B900800780 /* ExpensesListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListEntity.swift; sourceTree = "<group>"; };
+		E1572BF628B403C400800780 /* ExpensesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListRouter.swift; sourceTree = "<group>"; };
+		E1572BF828B40AD600800780 /* AddExpenseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseEntity.swift; sourceTree = "<group>"; };
+		E1572BFA28B40AE000800780 /* AddExpensePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensePresenter.swift; sourceTree = "<group>"; };
+		E1572BFC28B40AEC00800780 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		E1572BFE28B40AFB00800780 /* AddExpenseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseProtocols.swift; sourceTree = "<group>"; };
+		E1572C0028B40B0700800780 /* AddExpenseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseInteractor.swift; sourceTree = "<group>"; };
+		E1572C0228B40B1000800780 /* AddExpenseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +119,10 @@
 		E1572BA928B4006600800780 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
-				E1572BAA28B4006600800780 /* AppDelegate.swift */,
-				E1572BAC28B4006600800780 /* SceneDelegate.swift */,
-				E1572BAE28B4006600800780 /* ViewController.swift */,
-				E1572BB028B4006600800780 /* Main.storyboard */,
+				E1572BDA28B400E500800780 /* Root */,
+				E1572BDB28B400F300800780 /* Modules */,
+				E1572BE328B401F900800780 /* Commons */,
+				E1572BE228B401EA00800780 /* Resources */,
 				E1572BB328B4006600800780 /* Assets.xcassets */,
 				E1572BB528B4006600800780 /* LaunchScreen.storyboard */,
 				E1572BB828B4006600800780 /* Info.plist */,
@@ -125,6 +145,160 @@
 				E1572BCD28B4006600800780 /* ExpenseTrackerUITestsLaunchTests.swift */,
 			);
 			path = ExpenseTrackerUITests;
+			sourceTree = "<group>";
+		};
+		E1572BDA28B400E500800780 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BAA28B4006600800780 /* AppDelegate.swift */,
+				E1572BAC28B4006600800780 /* SceneDelegate.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		E1572BDB28B400F300800780 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BDC28B401A600800780 /* ExpensesList */,
+				E1572BE528B4024300800780 /* AddExpense */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E1572BDC28B401A600800780 /* ExpensesList */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BDF28B401C700800780 /* Protocols */,
+				E1572BDD28B401B300800780 /* View */,
+				E1572BE028B401DA00800780 /* Interactor */,
+				E1572BDE28B401BC00800780 /* Presenter */,
+				E1572BE128B401E000800780 /* Entity */,
+				E1572BE428B4021500800780 /* Router */,
+			);
+			path = ExpensesList;
+			sourceTree = "<group>";
+		};
+		E1572BDD28B401B300800780 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BEC28B4026800800780 /* ExpensesListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1572BDE28B401BC00800780 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BF228B403A900800780 /* ExpensesListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E1572BDF28B401C700800780 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BEE28B4028F00800780 /* ExpensesListProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E1572BE028B401DA00800780 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BF028B4039C00800780 /* ExpensesListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E1572BE128B401E000800780 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BF428B403B900800780 /* ExpensesListEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E1572BE228B401EA00800780 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E1572BE328B401F900800780 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		E1572BE428B4021500800780 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BF628B403C400800780 /* ExpensesListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E1572BE528B4024300800780 /* AddExpense */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BE928B4024300800780 /* Protocols */,
+				E1572BE828B4024300800780 /* View */,
+				E1572BEA28B4024300800780 /* Interactor */,
+				E1572BE728B4024300800780 /* Presenter */,
+				E1572BE628B4024300800780 /* Entity */,
+				E1572BEB28B4024300800780 /* Router */,
+			);
+			path = AddExpense;
+			sourceTree = "<group>";
+		};
+		E1572BE628B4024300800780 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BF828B40AD600800780 /* AddExpenseEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E1572BE728B4024300800780 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BFA28B40AE000800780 /* AddExpensePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E1572BE828B4024300800780 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BFC28B40AEC00800780 /* AddExpenseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1572BE928B4024300800780 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BFE28B40AFB00800780 /* AddExpenseProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E1572BEA28B4024300800780 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C0028B40B0700800780 /* AddExpenseInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E1572BEB28B4024300800780 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C0228B40B1000800780 /* AddExpenseRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +407,6 @@
 			files = (
 				E1572BB728B4006600800780 /* LaunchScreen.storyboard in Resources */,
 				E1572BB428B4006600800780 /* Assets.xcassets in Resources */,
-				E1572BB228B4006600800780 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +431,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1572BAF28B4006600800780 /* ViewController.swift in Sources */,
+				E1572BF128B4039C00800780 /* ExpensesListInteractor.swift in Sources */,
 				E1572BAB28B4006600800780 /* AppDelegate.swift in Sources */,
+				E1572BFF28B40AFB00800780 /* AddExpenseProtocols.swift in Sources */,
+				E1572BF928B40AD600800780 /* AddExpenseEntity.swift in Sources */,
+				E1572BFB28B40AE000800780 /* AddExpensePresenter.swift in Sources */,
+				E1572C0128B40B0700800780 /* AddExpenseInteractor.swift in Sources */,
 				E1572BAD28B4006600800780 /* SceneDelegate.swift in Sources */,
+				E1572BF728B403C400800780 /* ExpensesListRouter.swift in Sources */,
+				E1572BEF28B4028F00800780 /* ExpensesListProtocols.swift in Sources */,
+				E1572BED28B4026800800780 /* ExpensesListViewController.swift in Sources */,
+				E1572BF528B403B900800780 /* ExpensesListEntity.swift in Sources */,
+				E1572C0328B40B1000800780 /* AddExpenseRouter.swift in Sources */,
+				E1572BF328B403A900800780 /* ExpensesListPresenter.swift in Sources */,
+				E1572BFD28B40AEC00800780 /* AddExpenseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +481,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E1572BB028B4006600800780 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E1572BB128B4006600800780 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E1572BB528B4006600800780 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,9 +618,9 @@
 				DEVELOPMENT_TEAM = XGS5TBSJ2B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpenseTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Expense Tracker";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,9 +646,9 @@
 				DEVELOPMENT_TEAM = XGS5TBSJ2B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpenseTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Expense Tracker";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
