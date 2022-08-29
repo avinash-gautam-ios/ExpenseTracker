@@ -13,12 +13,16 @@ The features which you can use as part of the application inlcudes:
 - Once done, press the `Save Transaction` button
 - You can see your new transaction added on the home screen
 
-<Add Screenshot>
+![Simulator Screen Shot - iPhone 12 - 2022-08-30 at 01 47 07](https://user-images.githubusercontent.com/12506196/187290568-e01d1cb9-8490-4cf4-85f1-75522058744c.png)
+
+![Simulator Screen Shot - iPhone 12 - 2022-08-30 at 01 46 45](https://user-images.githubusercontent.com/12506196/187290639-710df232-5f78-4d8b-8296-cf828354ec75.png)
+
 
 #### 2. Deleting Expense
 - You can simply left swipe on any transaction item on the homescreen to delete it. Please see the screenshot attached below
 
-<Add Screenshot>
+![Simulator Screen Shot - iPhone 12 - 2022-08-30 at 01 47 12](https://user-images.githubusercontent.com/12506196/187290859-175a79ab-f9b5-4029-9693-8e2637fbe2bd.png)
+
 
 ## Technical Decisions
 
