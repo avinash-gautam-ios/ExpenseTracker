@@ -31,7 +31,6 @@
 		E1572C0E28B4918500800780 /* Execute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0D28B4918500800780 /* Execute.swift */; };
 		E1572C1028B4921A00800780 /* ExpensesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0F28B4921A00800780 /* ExpensesListTableViewCell.swift */; };
 		E1572C1328B493D000800780 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1228B493D000800780 /* Theme.swift */; };
-		E1572C1528B493E500800780 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1428B493E500800780 /* Constants.swift */; };
 		E1572C1A28B49A8A00800780 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1928B49A8A00800780 /* DoubleExtension.swift */; };
 		E1572C1D28B4B71F00800780 /* PersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */; };
 		E1572C2028B4B74B00800780 /* ExpenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1E28B4B74B00800780 /* ExpenseTracker.xcdatamodeld */; };
@@ -42,6 +41,11 @@
 		E1572C3728BC9DDB00800780 /* RadioButtonOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3628BC9DDB00800780 /* RadioButtonOptionView.swift */; };
 		E1572C3928BCBDBE00800780 /* AddTransactionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3828BCBDBE00800780 /* AddTransactionDatasource.swift */; };
 		E1572C3D28BCE0A200800780 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3C28BCE0A200800780 /* AppStrings.swift */; };
+		E1572C4028BCEFD200800780 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3F28BCEFD200800780 /* StringExtension.swift */; };
+		E1572C4328BD0C9E00800780 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4228BD0C9E00800780 /* DatabaseManager.swift */; };
+		E1572C4528BD0CF700800780 /* ExpensesListDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4428BD0CF700800780 /* ExpensesListDatasource.swift */; };
+		E1572C4728BD1C6F00800780 /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4628BD1C6F00800780 /* OptionalExtension.swift */; };
+		E1572C4928BD226800800780 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4828BD226800800780 /* DateFormatterExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +94,6 @@
 		E1572C0D28B4918500800780 /* Execute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Execute.swift; sourceTree = "<group>"; };
 		E1572C0F28B4921A00800780 /* ExpensesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListTableViewCell.swift; sourceTree = "<group>"; };
 		E1572C1228B493D000800780 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		E1572C1428B493E500800780 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E1572C1928B49A8A00800780 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContainer.swift; sourceTree = "<group>"; };
 		E1572C1F28B4B74B00800780 /* ExpenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -101,6 +104,11 @@
 		E1572C3628BC9DDB00800780 /* RadioButtonOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonOptionView.swift; sourceTree = "<group>"; };
 		E1572C3828BCBDBE00800780 /* AddTransactionDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDatasource.swift; sourceTree = "<group>"; };
 		E1572C3C28BCE0A200800780 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
+		E1572C3F28BCEFD200800780 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		E1572C4228BD0C9E00800780 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		E1572C4428BD0CF700800780 /* ExpensesListDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListDatasource.swift; sourceTree = "<group>"; };
+		E1572C4628BD1C6F00800780 /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
+		E1572C4828BD226800800780 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				E1572BF428B403B900800780 /* ExpensesListEntity.swift */,
+				E1572C4428BD0CF700800780 /* ExpensesListDatasource.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -268,7 +277,6 @@
 				E1572C1128B493C700800780 /* Theme */,
 				E1572C0C28B4917A00800780 /* Utils */,
 				E1572C0728B4903900800780 /* Extensions */,
-				E1572C1628B493ED00800780 /* Constants */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -350,6 +358,9 @@
 				E1572C0828B4904D00800780 /* UITableViewCellExtension.swift */,
 				E1572C0A28B490F100800780 /* UITableViewExtension.swift */,
 				E1572C1928B49A8A00800780 /* DoubleExtension.swift */,
+				E1572C3F28BCEFD200800780 /* StringExtension.swift */,
+				E1572C4628BD1C6F00800780 /* OptionalExtension.swift */,
+				E1572C4828BD226800800780 /* DateFormatterExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,17 +381,10 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		E1572C1628B493ED00800780 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				E1572C1428B493E500800780 /* Constants.swift */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
 		E1572C1B28B4B6BE00800780 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				E1572C4128BD0C8D00800780 /* DatabaseManager */,
 				E1572C2528B4BA7E00800780 /* Transaction */,
 				E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */,
 				E1572C1E28B4B74B00800780 /* ExpenseTracker.xcdatamodeld */,
@@ -435,6 +439,14 @@
 			children = (
 			);
 			path = Validations;
+			sourceTree = "<group>";
+		};
+		E1572C4128BD0C8D00800780 /* DatabaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C4228BD0C9E00800780 /* DatabaseManager.swift */,
+			);
+			path = DatabaseManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,7 +579,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1572C4328BD0C9E00800780 /* DatabaseManager.swift in Sources */,
+				E1572C4528BD0CF700800780 /* ExpensesListDatasource.swift in Sources */,
 				E1572BF128B4039C00800780 /* ExpensesListInteractor.swift in Sources */,
+				E1572C4028BCEFD200800780 /* StringExtension.swift in Sources */,
 				E1572BAB28B4006600800780 /* AppDelegate.swift in Sources */,
 				E1572C0928B4904D00800780 /* UITableViewCellExtension.swift in Sources */,
 				E1572BFF28B40AFB00800780 /* AddTransactionProtocols.swift in Sources */,
@@ -582,14 +597,15 @@
 				E1572C3528BC955C00800780 /* RadioButtonView.swift in Sources */,
 				E1572C1028B4921A00800780 /* ExpensesListTableViewCell.swift in Sources */,
 				E1572BEF28B4028F00800780 /* ExpensesListProtocols.swift in Sources */,
+				E1572C4728BD1C6F00800780 /* OptionalExtension.swift in Sources */,
 				E1572BED28B4026800800780 /* ExpensesListViewController.swift in Sources */,
 				E1572C1A28B49A8A00800780 /* DoubleExtension.swift in Sources */,
 				E1572C1328B493D000800780 /* Theme.swift in Sources */,
 				E1572C3D28BCE0A200800780 /* AppStrings.swift in Sources */,
 				E1572C3228BC951600800780 /* TransactionTypeTableCell.swift in Sources */,
+				E1572C4928BD226800800780 /* DateFormatterExtension.swift in Sources */,
 				E1572C3928BCBDBE00800780 /* AddTransactionDatasource.swift in Sources */,
 				E1572BF528B403B900800780 /* ExpensesListEntity.swift in Sources */,
-				E1572C1528B493E500800780 /* Constants.swift in Sources */,
 				E1572C3728BC9DDB00800780 /* RadioButtonOptionView.swift in Sources */,
 				E1572C2028B4B74B00800780 /* ExpenseTracker.xcdatamodeld in Sources */,
 				E1572C0B28B490F100800780 /* UITableViewExtension.swift in Sources */,

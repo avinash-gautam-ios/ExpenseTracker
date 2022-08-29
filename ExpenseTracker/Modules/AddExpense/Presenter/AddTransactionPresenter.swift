@@ -12,7 +12,7 @@ final class AddTransactionPresenter: AddTransactionViewToPresenterProtocol {
     var interactor: AddTransactionPresenterToInteractorProtocol?
     var router: AddTransactionPresenterToRouterProtocol?
     weak var view: AddTransactionPresenterToViewProtocol?
-
+    
     private let datasource: AddTransactionTableDatasource
     
     init() {
@@ -39,8 +39,32 @@ final class AddTransactionPresenter: AddTransactionViewToPresenterProtocol {
     func dataForRow(atIndex index: Int) -> AddTransactionCellType {
         return datasource.dataForRow(atIndex: index)
     }
+    
+    func didTapAddButton(transactionType: TransactionType?,
+                         description: String?,
+                         amount: String?) {
+        guard let type = transactionType,
+              let description = description,
+              let amount = amount,
+              !description.isEmpty,
+              !amount.isEmpty else {
+                  view?.showErrorAlert(withMessage: AppStrings.allFieldsEmptyMessage)
+                  return
+              }
+        
+        guard let amount = Double(amount) else {
+            view?.showErrorAlert(withMessage: AppStrings.transactionAmountEmptyMessage)
+            return
+        }
+        
+        interactor?.addTransaction(withAmount: amount,
+                                   type: type,
+                                   description: description)
+    }
 }
 
 extension AddTransactionPresenter: AddTransactionInteractorToPresenterProtocol {
-    
+    func didFinishSavingTransaction() {
+        view?.didUpdateViewState(.dismiss)
+    }
 }

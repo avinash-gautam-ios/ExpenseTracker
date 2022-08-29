@@ -80,14 +80,13 @@ final class ExpensesListTableViewCell: UITableViewCell {
     }
     
     func configure(withTransaction transaction: Transaction) {
-//        transactionDescriptionLabel.text = transaction.description
-//        transactionAmountLabel.text = transaction.amountString
-//        
-//        switch transaction.type {
-//        case .income:
-//            transactionAmountLabel.textColor = Theme.Color.incomeAmountColor
-//        case .expense:
-//            transactionAmountLabel.textColor = Theme.Color.expenseAmountColor
-//        }
+        transactionDescriptionLabel.text = transaction.statement
+        transactionAmountLabel.text = String(format: "%.3f", transaction.amount)
+        switch transaction.type {
+        case .income:
+            transactionAmountLabel.textColor = Theme.Color.incomeAmountColor
+        case .expense:
+            transactionAmountLabel.textColor = Theme.Color.expenseAmountColor
+        }
     }
 }

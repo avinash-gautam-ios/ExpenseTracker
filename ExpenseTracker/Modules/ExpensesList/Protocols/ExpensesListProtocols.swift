@@ -16,20 +16,26 @@ protocol ExpensesListViewToPresenterProtocol: AnyObject {
     var view: ExpensesListPresenterToViewProtocol? { get set }
     
     func viewLoaded()
-    
     func didTapAddTransactionButton(fromController controller: UIViewController)
+    func fetchLatestTransactions()
+    
+    /// tableview
+    func numberOfSections() -> Int
+    func numberOfRows(inSection section: Int) -> Int
+    func dataForRow(atSection section: Int, index: Int) -> Transaction
+    func sectionItem(atIndex index: Int) -> ExpensesListTableSection
 }
 
 // Presenter -> View
 
 protocol ExpensesListPresenterToViewProtocol: AnyObject {
-    
+    func didUpdateViewState(_ state: ExpensesListViewState)
 }
 
 // Presenter -> Interactor
 
 protocol ExpensesListPresenterToInteractorProtocol: AnyObject {
-    
+    func fetchTransactions(_ completion: @escaping ([Transaction]?, Error?) -> Void)
 }
 
 // Presenter -> Router

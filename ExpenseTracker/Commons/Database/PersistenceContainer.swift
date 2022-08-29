@@ -32,4 +32,14 @@ final class PersistenceContainer: NSPersistentContainer {
         
         viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
     }
+    
+    func saveContext() { 
+        if viewContext.hasChanges {
+            do {
+                try viewContext.save()
+            } catch {
+                print("An error occurred while saving: \(error)")
+            }
+        }
+    }
 }

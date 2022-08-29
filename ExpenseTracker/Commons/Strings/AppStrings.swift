@@ -18,5 +18,9 @@ enum AppStrings {
     static let transactionAmountDescription = "amount"
     static let currencySymbol = "$"
     static let transactionAmount = "Transaction Amount"
-    
+    static let okString = "OK"
+    static let genericErrorTitle = "Please check"
+    static let allFieldsEmptyMessage = "All fields are mandatory. Please check before adding any transaction"
+    static let transactionAmountEmptyMessage = "Looks like you forgot to add the amount for the transaction you have made, please take a look"
+    static let expensesListPageTitle = "Expenses Tracker"
 }

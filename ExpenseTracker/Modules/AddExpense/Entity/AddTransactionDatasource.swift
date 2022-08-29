@@ -46,8 +46,8 @@ struct AddTransactionTableDatasource {
     
     init() {
         /// transaction types
-        let options = [RadioButtonOption(value: AppStrings.transactionTypeIncome),
-                       RadioButtonOption(value: AppStrings.transactionTypeExpense)]
+        let options = [TransactionType.income,
+                       TransactionType.expense]
         let transactionTypeModel = TransactionTypeTableCell.Model(title: AppStrings.transactionType, options: options, selectedIndex: 0)
         
         /// transaction description

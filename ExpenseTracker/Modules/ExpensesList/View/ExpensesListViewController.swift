@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 
 enum ExpensesListViewState {
+    case content(buttonTitle: String)
+    case reloadTable
     case empty
 }
 
@@ -16,6 +19,7 @@ enum ExpensesListViewState {
 final class ExpensesListViewController: UIViewController {
     
     var presenter: ExpensesListViewToPresenterProtocol?
+    var transactions: [Transaction] = []
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -42,6 +46,7 @@ final class ExpensesListViewController: UIViewController {
     }
     
     private func configureUI() {
+        navigationItem.title = AppStrings.expensesListPageTitle
         view.backgroundColor = Theme.BackgroundColor.viewBackgroundColor
         tableView.backgroundColor = Theme.BackgroundColor.viewBackgroundColor
         tableView.register(cell: ExpensesListTableViewCell.self)
@@ -75,24 +80,45 @@ final class ExpensesListViewController: UIViewController {
 }
 
 extension ExpensesListViewController: ExpensesListPresenterToViewProtocol {
-    
+    func didUpdateViewState(_ state: ExpensesListViewState) {
+        switch state {
+        case .content(let buttonTitle):
+            addTransactionButton.setTitle(buttonTitle, for: .normal)
+        case .reloadTable:
+            tableView.reloadData()
+        case .empty:
+            break
+        }
+    }
 }
 
 extension ExpensesListViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ExpensesListTableViewCell.staticIdentifier)
             .flatMap { $0 as? ExpensesListTableViewCell } ?? ExpensesListTableViewCell()
-//        cell.configure(withTransaction: ds[indexPath.row])
         cell.selectionStyle = .none
+        presenter.unwrap { presenter in
+            let data = presenter.dataForRow(atSection: indexPath.section, index: indexPath.row)
+            cell.configure(withTransaction: data)
+        }
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return presenter?.numberOfSections() ?? 0
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return presenter?.numberOfRows(inSection: section) ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   titleForHeaderInSection section: Int) -> String? {
+        return presenter
+            .map { $0.sectionItem(atIndex: section) }
+            .map { $0.title } ?? nil
     }
 }

@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol TransactionTextFieldTableCellDelegate: AnyObject {
-    func transactionTextFieldTableCell(_ cell: TransactionTextFieldTableCell,
-                                       didSelectCellWithModel model: TransactionTextFieldTableCell.Model)
-}
 
 final class TransactionTextFieldTableCell: UITableViewCell {
     
@@ -38,9 +34,12 @@ final class TransactionTextFieldTableCell: UITableViewCell {
         textfield.borderStyle = .roundedRect
         return textfield
     }()
+        
+    var value: String? {
+        return textfield.text
+    }
     
-    private var cellType: AddTransactionCellType?
-    weak var delegate: TransactionTextFieldTableCellDelegate?
+    private(set) var cellType: AddTransactionCellType?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -84,18 +83,11 @@ final class TransactionTextFieldTableCell: UITableViewCell {
         textfield.becomeFirstResponder()
     }
     
-    func configure(forCellType cellType: AddTransactionCellType) {
+    func updateCellType(cellType: AddTransactionCellType) {
         self.cellType = cellType
-        switch cellType {
-        case .transactionType( _ ):
-            break
-        case .transactionDescription(let model),
-                .transactionAmount(let model):
-            configure(withModel: model)
-        }
     }
     
-    private func configure(withModel model: Model) {
+    func configure(withModel model: Model) {
         titleLabel.text = model.title
         textfield.keyboardType = model.keyboardType
         textfield.placeholder = model.placeholder
@@ -123,7 +115,18 @@ final class TransactionTextFieldTableCell: UITableViewCell {
 }
 
 extension TransactionTextFieldTableCell: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        if textField.keyboardType == .decimalPad {
+            guard !string.isEmpty else { return true }
+            
+            let currentText = textField.text ?? ""
+            let replacementText = (currentText as NSString).replacingCharacters(in: range, with: string)
+            
+            return replacementText.isDecimal()
+        } else {
+            return true
+        }
     }
 }

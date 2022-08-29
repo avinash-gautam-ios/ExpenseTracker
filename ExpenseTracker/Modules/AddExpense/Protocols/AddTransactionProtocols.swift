@@ -16,6 +16,9 @@ protocol AddTransactionViewToPresenterProtocol: AnyObject {
     var view: AddTransactionPresenterToViewProtocol? { get set }
     
     func viewLoaded()
+    func didTapAddButton(transactionType: TransactionType?,
+                         description: String?,
+                         amount: String?)
     
     /// tableview
     func numberOfSections() -> Int
@@ -28,12 +31,15 @@ protocol AddTransactionViewToPresenterProtocol: AnyObject {
 
 protocol AddTransactionPresenterToViewProtocol: AnyObject {
     func didUpdateViewState(_ state: AddTransactionViewState)
+    func showErrorAlert(withMessage message: String)
 }
 
 // Presenter -> Interactor
 
 protocol AddTransactionPresenterToInteractorProtocol: AnyObject {
-    
+    func addTransaction(withAmount amount: Double,
+                        type: TransactionType,
+                        description: String)
 }
 
 // Presenter -> Router
@@ -45,6 +51,6 @@ protocol AddTransactionPresenterToRouterProtocol: AnyObject {
 // Interactor -> Presenter
 
 protocol AddTransactionInteractorToPresenterProtocol: AnyObject {
-    
+    func didFinishSavingTransaction()
 }
 

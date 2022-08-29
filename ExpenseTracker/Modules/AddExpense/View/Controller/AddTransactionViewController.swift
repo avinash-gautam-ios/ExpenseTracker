@@ -11,6 +11,7 @@ import Combine
 enum AddTransactionViewState {
     case content(buttonTitle: String)
     case reloadTable
+    case dismiss
 }
 
 final class AddTransactionViewController: UIViewController {
@@ -59,6 +60,9 @@ final class AddTransactionViewController: UIViewController {
         ])
         
         view.addSubview(addButton)
+        addButton.addTarget(self,
+                            action: #selector(addButtonAction),
+                            for: .touchUpInside)
         NSLayoutConstraint.activate([
             addButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: Theme.Padding.padding10),
             addButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Theme.Padding.padding20),
@@ -88,6 +92,41 @@ final class AddTransactionViewController: UIViewController {
             }
         }
     }
+    
+    @objc private func addButtonAction() {
+        
+        var transactionType: TransactionType?
+        var transactionDescription: String?
+        var transactionAmount: String?
+        
+        let rows = tableView.numberOfRows(inSection: 0)
+        for index in 0...rows {
+            let indexPath = IndexPath(row: index, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath) {
+                /// check if cell is of type transaction type
+                if let transactionTypeCell = cell as? TransactionTypeTableCell {
+                    transactionType = transactionTypeCell.selectedOption
+                }
+                
+                /// check if cell is of type transaction description
+                if let cell = cell as? TransactionTextFieldTableCell {
+                    switch cell.cellType {
+                    case .transactionDescription(_):
+                        transactionDescription = cell.value
+                    case .transactionAmount(_):
+                        transactionAmount = cell.value
+                    default: break
+                    }
+                }
+            }
+        }
+        
+        /// pass the data to presenter for further validations
+        ///
+        presenter?.didTapAddButton(transactionType: transactionType,
+                                   description: transactionDescription,
+                                   amount: transactionAmount)
+    }
 }
 
 extension AddTransactionViewController: UITableViewDelegate, UITableViewDataSource {
@@ -111,16 +150,18 @@ extension AddTransactionViewController: UITableViewDelegate, UITableViewDataSour
                 .flatMap { $0 as? TransactionTypeTableCell } ?? TransactionTypeTableCell()
             cell.configure(withModel: model)
             return cell
-        case .transactionDescription(_):
+        case .transactionDescription(let model):
             let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableCell.staticIdentifier)
                 .flatMap { $0 as? TransactionTextFieldTableCell } ?? TransactionTextFieldTableCell()
             cell.makeFirstResponder()
-            cell.configure(forCellType: data)
+            cell.updateCellType(cellType: data)
+            cell.configure(withModel: model)
             return cell
-        case .transactionAmount(_):
+        case .transactionAmount(let model):
             let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableCell.staticIdentifier)
                 .flatMap { $0 as? TransactionTextFieldTableCell } ?? TransactionTextFieldTableCell()
-            cell.configure(forCellType: data)
+            cell.updateCellType(cellType: data)
+            cell.configure(withModel: model)
             return cell
         }
     }
@@ -137,6 +178,18 @@ extension AddTransactionViewController: AddTransactionPresenterToViewProtocol {
             tableView.reloadData()
         case .content(buttonTitle: let title):
             addButton.setTitle(title, for: .normal)
+        case .dismiss:
+            dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func showErrorAlert(withMessage message: String) {
+        let action = UIAlertAction(title: AppStrings.okString,
+                                   style: .default) { _ in }
+        let alert = UIAlertController(title: AppStrings.genericErrorTitle,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
