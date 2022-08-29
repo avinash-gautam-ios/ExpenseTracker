@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 final class ExpensesListTableViewCell: UITableViewCell {
     
     private let transactionDescriptionLabel: UILabel = {
@@ -57,7 +58,6 @@ final class ExpensesListTableViewCell: UITableViewCell {
         contentView.backgroundColor = Theme.BackgroundColor.cellBackgroundColor
         
         /// description label
-        
         contentView.addSubview(transactionDescriptionLabel)
         transactionDescriptionLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
         transactionDescriptionLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
@@ -68,7 +68,6 @@ final class ExpensesListTableViewCell: UITableViewCell {
         ])
         
         /// amount label
-        
         contentView.addSubview(transactionAmountLabel)
         transactionAmountLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         transactionAmountLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -81,12 +80,13 @@ final class ExpensesListTableViewCell: UITableViewCell {
     
     func configure(withTransaction transaction: Transaction) {
         transactionDescriptionLabel.text = transaction.statement
-        transactionAmountLabel.text = String(format: "%.3f", transaction.amount)
         switch transaction.type {
         case .income:
             transactionAmountLabel.textColor = Theme.Color.incomeAmountColor
+            transactionAmountLabel.text = String(format: "+ %.2f", transaction.amount)
         case .expense:
             transactionAmountLabel.textColor = Theme.Color.expenseAmountColor
+            transactionAmountLabel.text = String(format: "- %.2f", transaction.amount)
         }
     }
 }

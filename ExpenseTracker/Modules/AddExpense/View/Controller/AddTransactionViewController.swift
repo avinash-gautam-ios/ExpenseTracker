@@ -8,9 +8,18 @@
 import UIKit
 import Combine
 
+
+/// View states defining custom events for the AddTransactionViewController
+///
+
 enum AddTransactionViewState {
+    /// load basic content on the screen
     case content(buttonTitle: String)
+    
+    /// reload table
     case reloadTable
+    
+    /// dismiss the view
     case dismiss
 }
 
@@ -32,7 +41,6 @@ final class AddTransactionViewController: UIViewController {
     }()
     
     var presenter: AddTransactionViewToPresenterProtocol?
-    private var cancellables: Set<AnyCancellable> = []
     private var buttonBottomConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
@@ -94,7 +102,6 @@ final class AddTransactionViewController: UIViewController {
     }
     
     @objc private func addButtonAction() {
-        
         var transactionType: TransactionType?
         var transactionDescription: String?
         var transactionAmount: String?

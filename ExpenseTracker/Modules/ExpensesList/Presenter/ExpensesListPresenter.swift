@@ -33,8 +33,11 @@ final class ExpensesListPresenter: ExpensesListViewToPresenterProtocol {
                       return
                   }
             
+            /// reset datasource with latest transactions
             self.datasource.reset()
             self.datasource.add(transactions: transactions)
+            
+            /// update view state to reload table
             ExecuteImp.onMain {
                 self.view?.didUpdateViewState(.reloadTable)
             }
@@ -60,19 +63,30 @@ final class ExpensesListPresenter: ExpensesListViewToPresenterProtocol {
     func sectionItem(atIndex index: Int) -> ExpensesListTableSection {
         return datasource.sections[index]
     }
+    
+    func deleteItem(inSection section: Int, atIndex index: Int) {
+        let transaction = datasource.sections[section].items[index]
+        datasource.deleteItem(inSection: section, atIndex: index)
+        interactor?.delete(transaction: transaction)
+    }
 }
 
-extension ExpensesListPresenter: ExpensesListInteractorToPresenterProtocol {
-    
-}
+extension ExpensesListPresenter: ExpensesListInteractorToPresenterProtocol { }
 
 extension ExpensesListPresenter {
+    
+    /// setup database notification on context saving
+    /// this helps in dynamically updating the values on the UI
+    /// as soon as an item is added into the database
+    ///
+    
     private func setupDatabase() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(contextDidSave),
                                                name: Notification.Name.NSManagedObjectContextDidSave,
                                                object: nil)
     }
+    
     
     @objc private func contextDidSave(_ notification: Notification) {
         fetchLatestTransactions()

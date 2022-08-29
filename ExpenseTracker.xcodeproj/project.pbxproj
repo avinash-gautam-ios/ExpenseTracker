@@ -42,10 +42,10 @@
 		E1572C3928BCBDBE00800780 /* AddTransactionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3828BCBDBE00800780 /* AddTransactionDatasource.swift */; };
 		E1572C3D28BCE0A200800780 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3C28BCE0A200800780 /* AppStrings.swift */; };
 		E1572C4028BCEFD200800780 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3F28BCEFD200800780 /* StringExtension.swift */; };
-		E1572C4328BD0C9E00800780 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4228BD0C9E00800780 /* DatabaseManager.swift */; };
+		E1572C4328BD0C9E00800780 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4228BD0C9E00800780 /* DatabaseHelper.swift */; };
 		E1572C4528BD0CF700800780 /* ExpensesListDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4428BD0CF700800780 /* ExpensesListDatasource.swift */; };
-		E1572C4728BD1C6F00800780 /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4628BD1C6F00800780 /* OptionalExtension.swift */; };
 		E1572C4928BD226800800780 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4828BD226800800780 /* DateFormatterExtension.swift */; };
+		E1572C4C28BD3E7100800780 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4B28BD3E7100800780 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,10 +105,10 @@
 		E1572C3828BCBDBE00800780 /* AddTransactionDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDatasource.swift; sourceTree = "<group>"; };
 		E1572C3C28BCE0A200800780 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		E1572C3F28BCEFD200800780 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		E1572C4228BD0C9E00800780 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		E1572C4228BD0C9E00800780 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		E1572C4428BD0CF700800780 /* ExpensesListDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListDatasource.swift; sourceTree = "<group>"; };
-		E1572C4628BD1C6F00800780 /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
 		E1572C4828BD226800800780 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		E1572C4B28BD3E7100800780 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,6 @@
 				E1572BDA28B400E500800780 /* Root */,
 				E1572BDB28B400F300800780 /* Modules */,
 				E1572BE328B401F900800780 /* Commons */,
-				E1572BE228B401EA00800780 /* Resources */,
 				E1572BB328B4006600800780 /* Assets.xcassets */,
 				E1572BB528B4006600800780 /* LaunchScreen.storyboard */,
 				E1572BB828B4006600800780 /* Info.plist */,
@@ -221,8 +220,8 @@
 		E1572BDD28B401B300800780 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E1572BEC28B4026800800780 /* ExpensesListViewController.swift */,
-				E1572C0F28B4921A00800780 /* ExpensesListTableViewCell.swift */,
+				E1572C4F28BD479600800780 /* Controller */,
+				E1572C5028BD479F00800780 /* TableCells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,16 +259,10 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		E1572BE228B401EA00800780 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		E1572BE328B401F900800780 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				E1572C4A28BD3E6800800780 /* Logger */,
 				E1572C3E28BCE26800800780 /* Validations */,
 				E1572C3B28BCE09500800780 /* Strings */,
 				E1572C3328BC954A00800780 /* Views */,
@@ -359,7 +352,6 @@
 				E1572C0A28B490F100800780 /* UITableViewExtension.swift */,
 				E1572C1928B49A8A00800780 /* DoubleExtension.swift */,
 				E1572C3F28BCEFD200800780 /* StringExtension.swift */,
-				E1572C4628BD1C6F00800780 /* OptionalExtension.swift */,
 				E1572C4828BD226800800780 /* DateFormatterExtension.swift */,
 			);
 			path = Extensions;
@@ -385,19 +377,18 @@
 			isa = PBXGroup;
 			children = (
 				E1572C4128BD0C8D00800780 /* DatabaseManager */,
-				E1572C2528B4BA7E00800780 /* Transaction */,
-				E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */,
+				E1572C2528B4BA7E00800780 /* ManagedObjects */,
 				E1572C1E28B4B74B00800780 /* ExpenseTracker.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
 		};
-		E1572C2528B4BA7E00800780 /* Transaction */ = {
+		E1572C2528B4BA7E00800780 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
 				E1572C2A28B4BAED00800780 /* Transaction.swift */,
 			);
-			path = Transaction;
+			path = ManagedObjects;
 			sourceTree = "<group>";
 		};
 		E1572C2E28BC94BF00800780 /* TableCells */ = {
@@ -444,9 +435,34 @@
 		E1572C4128BD0C8D00800780 /* DatabaseManager */ = {
 			isa = PBXGroup;
 			children = (
-				E1572C4228BD0C9E00800780 /* DatabaseManager.swift */,
+				E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */,
+				E1572C4228BD0C9E00800780 /* DatabaseHelper.swift */,
 			);
 			path = DatabaseManager;
+			sourceTree = "<group>";
+		};
+		E1572C4A28BD3E6800800780 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C4B28BD3E7100800780 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		E1572C4F28BD479600800780 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BEC28B4026800800780 /* ExpensesListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1572C5028BD479F00800780 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C0F28B4921A00800780 /* ExpensesListTableViewCell.swift */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,7 +595,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1572C4328BD0C9E00800780 /* DatabaseManager.swift in Sources */,
+				E1572C4328BD0C9E00800780 /* DatabaseHelper.swift in Sources */,
 				E1572C4528BD0CF700800780 /* ExpensesListDatasource.swift in Sources */,
 				E1572BF128B4039C00800780 /* ExpensesListInteractor.swift in Sources */,
 				E1572C4028BCEFD200800780 /* StringExtension.swift in Sources */,
@@ -597,13 +613,13 @@
 				E1572C3528BC955C00800780 /* RadioButtonView.swift in Sources */,
 				E1572C1028B4921A00800780 /* ExpensesListTableViewCell.swift in Sources */,
 				E1572BEF28B4028F00800780 /* ExpensesListProtocols.swift in Sources */,
-				E1572C4728BD1C6F00800780 /* OptionalExtension.swift in Sources */,
 				E1572BED28B4026800800780 /* ExpensesListViewController.swift in Sources */,
 				E1572C1A28B49A8A00800780 /* DoubleExtension.swift in Sources */,
 				E1572C1328B493D000800780 /* Theme.swift in Sources */,
 				E1572C3D28BCE0A200800780 /* AppStrings.swift in Sources */,
 				E1572C3228BC951600800780 /* TransactionTypeTableCell.swift in Sources */,
 				E1572C4928BD226800800780 /* DateFormatterExtension.swift in Sources */,
+				E1572C4C28BD3E7100800780 /* Logger.swift in Sources */,
 				E1572C3928BCBDBE00800780 /* AddTransactionDatasource.swift in Sources */,
 				E1572BF528B403B900800780 /* ExpensesListEntity.swift in Sources */,
 				E1572C3728BC9DDB00800780 /* RadioButtonOptionView.swift in Sources */,
