@@ -20,12 +20,28 @@
 		E1572BF328B403A900800780 /* ExpensesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF228B403A900800780 /* ExpensesListPresenter.swift */; };
 		E1572BF528B403B900800780 /* ExpensesListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF428B403B900800780 /* ExpensesListEntity.swift */; };
 		E1572BF728B403C400800780 /* ExpensesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF628B403C400800780 /* ExpensesListRouter.swift */; };
-		E1572BF928B40AD600800780 /* AddExpenseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF828B40AD600800780 /* AddExpenseEntity.swift */; };
-		E1572BFB28B40AE000800780 /* AddExpensePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BFA28B40AE000800780 /* AddExpensePresenter.swift */; };
-		E1572BFD28B40AEC00800780 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BFC28B40AEC00800780 /* AddExpenseViewController.swift */; };
-		E1572BFF28B40AFB00800780 /* AddExpenseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BFE28B40AFB00800780 /* AddExpenseProtocols.swift */; };
-		E1572C0128B40B0700800780 /* AddExpenseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0028B40B0700800780 /* AddExpenseInteractor.swift */; };
-		E1572C0328B40B1000800780 /* AddExpenseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0228B40B1000800780 /* AddExpenseRouter.swift */; };
+		E1572BF928B40AD600800780 /* AddTransactionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF828B40AD600800780 /* AddTransactionEntity.swift */; };
+		E1572BFB28B40AE000800780 /* AddTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BFA28B40AE000800780 /* AddTransactionPresenter.swift */; };
+		E1572BFD28B40AEC00800780 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BFC28B40AEC00800780 /* AddTransactionViewController.swift */; };
+		E1572BFF28B40AFB00800780 /* AddTransactionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BFE28B40AFB00800780 /* AddTransactionProtocols.swift */; };
+		E1572C0128B40B0700800780 /* AddTransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0028B40B0700800780 /* AddTransactionInteractor.swift */; };
+		E1572C0328B40B1000800780 /* AddTransactionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0228B40B1000800780 /* AddTransactionRouter.swift */; };
+		E1572C0928B4904D00800780 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0828B4904D00800780 /* UITableViewCellExtension.swift */; };
+		E1572C0B28B490F100800780 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0A28B490F100800780 /* UITableViewExtension.swift */; };
+		E1572C0E28B4918500800780 /* Execute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0D28B4918500800780 /* Execute.swift */; };
+		E1572C1028B4921A00800780 /* ExpensesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0F28B4921A00800780 /* ExpensesListTableViewCell.swift */; };
+		E1572C1328B493D000800780 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1228B493D000800780 /* Theme.swift */; };
+		E1572C1528B493E500800780 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1428B493E500800780 /* Constants.swift */; };
+		E1572C1A28B49A8A00800780 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1928B49A8A00800780 /* DoubleExtension.swift */; };
+		E1572C1D28B4B71F00800780 /* PersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */; };
+		E1572C2028B4B74B00800780 /* ExpenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1E28B4B74B00800780 /* ExpenseTracker.xcdatamodeld */; };
+		E1572C2C28B4BAED00800780 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C2A28B4BAED00800780 /* Transaction.swift */; };
+		E1572C3028BC94E800800780 /* TransactionTextFieldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C2F28BC94E800800780 /* TransactionTextFieldTableCell.swift */; };
+		E1572C3228BC951600800780 /* TransactionTypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3128BC951600800780 /* TransactionTypeTableCell.swift */; };
+		E1572C3528BC955C00800780 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3428BC955C00800780 /* RadioButtonView.swift */; };
+		E1572C3728BC9DDB00800780 /* RadioButtonOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3628BC9DDB00800780 /* RadioButtonOptionView.swift */; };
+		E1572C3928BCBDBE00800780 /* AddTransactionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3828BCBDBE00800780 /* AddTransactionDatasource.swift */; };
+		E1572C3D28BCE0A200800780 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3C28BCE0A200800780 /* AppStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,12 +79,28 @@
 		E1572BF228B403A900800780 /* ExpensesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListPresenter.swift; sourceTree = "<group>"; };
 		E1572BF428B403B900800780 /* ExpensesListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListEntity.swift; sourceTree = "<group>"; };
 		E1572BF628B403C400800780 /* ExpensesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListRouter.swift; sourceTree = "<group>"; };
-		E1572BF828B40AD600800780 /* AddExpenseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseEntity.swift; sourceTree = "<group>"; };
-		E1572BFA28B40AE000800780 /* AddExpensePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensePresenter.swift; sourceTree = "<group>"; };
-		E1572BFC28B40AEC00800780 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
-		E1572BFE28B40AFB00800780 /* AddExpenseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseProtocols.swift; sourceTree = "<group>"; };
-		E1572C0028B40B0700800780 /* AddExpenseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseInteractor.swift; sourceTree = "<group>"; };
-		E1572C0228B40B1000800780 /* AddExpenseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseRouter.swift; sourceTree = "<group>"; };
+		E1572BF828B40AD600800780 /* AddTransactionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionEntity.swift; sourceTree = "<group>"; };
+		E1572BFA28B40AE000800780 /* AddTransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionPresenter.swift; sourceTree = "<group>"; };
+		E1572BFC28B40AEC00800780 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		E1572BFE28B40AFB00800780 /* AddTransactionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionProtocols.swift; sourceTree = "<group>"; };
+		E1572C0028B40B0700800780 /* AddTransactionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionInteractor.swift; sourceTree = "<group>"; };
+		E1572C0228B40B1000800780 /* AddTransactionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionRouter.swift; sourceTree = "<group>"; };
+		E1572C0828B4904D00800780 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		E1572C0A28B490F100800780 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		E1572C0D28B4918500800780 /* Execute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Execute.swift; sourceTree = "<group>"; };
+		E1572C0F28B4921A00800780 /* ExpensesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListTableViewCell.swift; sourceTree = "<group>"; };
+		E1572C1228B493D000800780 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E1572C1428B493E500800780 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E1572C1928B49A8A00800780 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContainer.swift; sourceTree = "<group>"; };
+		E1572C1F28B4B74B00800780 /* ExpenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseTracker.xcdatamodel; sourceTree = "<group>"; };
+		E1572C2A28B4BAED00800780 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		E1572C2F28BC94E800800780 /* TransactionTextFieldTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTextFieldTableCell.swift; sourceTree = "<group>"; };
+		E1572C3128BC951600800780 /* TransactionTypeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTypeTableCell.swift; sourceTree = "<group>"; };
+		E1572C3428BC955C00800780 /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		E1572C3628BC9DDB00800780 /* RadioButtonOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonOptionView.swift; sourceTree = "<group>"; };
+		E1572C3828BCBDBE00800780 /* AddTransactionDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDatasource.swift; sourceTree = "<group>"; };
+		E1572C3C28BCE0A200800780 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				E1572BEC28B4026800800780 /* ExpensesListViewController.swift */,
+				E1572C0F28B4921A00800780 /* ExpensesListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +261,14 @@
 		E1572BE328B401F900800780 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				E1572C3E28BCE26800800780 /* Validations */,
+				E1572C3B28BCE09500800780 /* Strings */,
+				E1572C3328BC954A00800780 /* Views */,
+				E1572C1B28B4B6BE00800780 /* Database */,
+				E1572C1128B493C700800780 /* Theme */,
+				E1572C0C28B4917A00800780 /* Utils */,
+				E1572C0728B4903900800780 /* Extensions */,
+				E1572C1628B493ED00800780 /* Constants */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -256,7 +297,8 @@
 		E1572BE628B4024300800780 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				E1572BF828B40AD600800780 /* AddExpenseEntity.swift */,
+				E1572BF828B40AD600800780 /* AddTransactionEntity.swift */,
+				E1572C3828BCBDBE00800780 /* AddTransactionDatasource.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -264,7 +306,7 @@
 		E1572BE728B4024300800780 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				E1572BFA28B40AE000800780 /* AddExpensePresenter.swift */,
+				E1572BFA28B40AE000800780 /* AddTransactionPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -272,7 +314,8 @@
 		E1572BE828B4024300800780 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E1572BFC28B40AEC00800780 /* AddExpenseViewController.swift */,
+				E1572C3A28BCC78100800780 /* Controller */,
+				E1572C2E28BC94BF00800780 /* TableCells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,7 +323,7 @@
 		E1572BE928B4024300800780 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				E1572BFE28B40AFB00800780 /* AddExpenseProtocols.swift */,
+				E1572BFE28B40AFB00800780 /* AddTransactionProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -288,7 +331,7 @@
 		E1572BEA28B4024300800780 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				E1572C0028B40B0700800780 /* AddExpenseInteractor.swift */,
+				E1572C0028B40B0700800780 /* AddTransactionInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -296,9 +339,102 @@
 		E1572BEB28B4024300800780 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				E1572C0228B40B1000800780 /* AddExpenseRouter.swift */,
+				E1572C0228B40B1000800780 /* AddTransactionRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		E1572C0728B4903900800780 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C0828B4904D00800780 /* UITableViewCellExtension.swift */,
+				E1572C0A28B490F100800780 /* UITableViewExtension.swift */,
+				E1572C1928B49A8A00800780 /* DoubleExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E1572C0C28B4917A00800780 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C0D28B4918500800780 /* Execute.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E1572C1128B493C700800780 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C1228B493D000800780 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		E1572C1628B493ED00800780 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C1428B493E500800780 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		E1572C1B28B4B6BE00800780 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C2528B4BA7E00800780 /* Transaction */,
+				E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */,
+				E1572C1E28B4B74B00800780 /* ExpenseTracker.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		E1572C2528B4BA7E00800780 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C2A28B4BAED00800780 /* Transaction.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		E1572C2E28BC94BF00800780 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C3128BC951600800780 /* TransactionTypeTableCell.swift */,
+				E1572C2F28BC94E800800780 /* TransactionTextFieldTableCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		E1572C3328BC954A00800780 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C3428BC955C00800780 /* RadioButtonView.swift */,
+				E1572C3628BC9DDB00800780 /* RadioButtonOptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E1572C3A28BCC78100800780 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1572BFC28B40AEC00800780 /* AddTransactionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1572C3B28BCE09500800780 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C3C28BCE0A200800780 /* AppStrings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		E1572C3E28BCE26800800780 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Validations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,18 +569,34 @@
 			files = (
 				E1572BF128B4039C00800780 /* ExpensesListInteractor.swift in Sources */,
 				E1572BAB28B4006600800780 /* AppDelegate.swift in Sources */,
-				E1572BFF28B40AFB00800780 /* AddExpenseProtocols.swift in Sources */,
-				E1572BF928B40AD600800780 /* AddExpenseEntity.swift in Sources */,
-				E1572BFB28B40AE000800780 /* AddExpensePresenter.swift in Sources */,
-				E1572C0128B40B0700800780 /* AddExpenseInteractor.swift in Sources */,
+				E1572C0928B4904D00800780 /* UITableViewCellExtension.swift in Sources */,
+				E1572BFF28B40AFB00800780 /* AddTransactionProtocols.swift in Sources */,
+				E1572C2C28B4BAED00800780 /* Transaction.swift in Sources */,
+				E1572BF928B40AD600800780 /* AddTransactionEntity.swift in Sources */,
+				E1572BFB28B40AE000800780 /* AddTransactionPresenter.swift in Sources */,
+				E1572C0128B40B0700800780 /* AddTransactionInteractor.swift in Sources */,
 				E1572BAD28B4006600800780 /* SceneDelegate.swift in Sources */,
 				E1572BF728B403C400800780 /* ExpensesListRouter.swift in Sources */,
+				E1572C0E28B4918500800780 /* Execute.swift in Sources */,
+				E1572C3028BC94E800800780 /* TransactionTextFieldTableCell.swift in Sources */,
+				E1572C3528BC955C00800780 /* RadioButtonView.swift in Sources */,
+				E1572C1028B4921A00800780 /* ExpensesListTableViewCell.swift in Sources */,
 				E1572BEF28B4028F00800780 /* ExpensesListProtocols.swift in Sources */,
 				E1572BED28B4026800800780 /* ExpensesListViewController.swift in Sources */,
+				E1572C1A28B49A8A00800780 /* DoubleExtension.swift in Sources */,
+				E1572C1328B493D000800780 /* Theme.swift in Sources */,
+				E1572C3D28BCE0A200800780 /* AppStrings.swift in Sources */,
+				E1572C3228BC951600800780 /* TransactionTypeTableCell.swift in Sources */,
+				E1572C3928BCBDBE00800780 /* AddTransactionDatasource.swift in Sources */,
 				E1572BF528B403B900800780 /* ExpensesListEntity.swift in Sources */,
-				E1572C0328B40B1000800780 /* AddExpenseRouter.swift in Sources */,
+				E1572C1528B493E500800780 /* Constants.swift in Sources */,
+				E1572C3728BC9DDB00800780 /* RadioButtonOptionView.swift in Sources */,
+				E1572C2028B4B74B00800780 /* ExpenseTracker.xcdatamodeld in Sources */,
+				E1572C0B28B490F100800780 /* UITableViewExtension.swift in Sources */,
+				E1572C0328B40B1000800780 /* AddTransactionRouter.swift in Sources */,
+				E1572C1D28B4B71F00800780 /* PersistenceContainer.swift in Sources */,
 				E1572BF328B403A900800780 /* ExpensesListPresenter.swift in Sources */,
-				E1572BFD28B40AEC00800780 /* AddExpenseViewController.swift in Sources */,
+				E1572BFD28B40AEC00800780 /* AddTransactionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +775,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -651,6 +804,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -800,6 +954,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E1572C1E28B4B74B00800780 /* ExpenseTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E1572C1F28B4B74B00800780 /* ExpenseTracker.xcdatamodel */,
+			);
+			currentVersion = E1572C1F28B4B74B00800780 /* ExpenseTracker.xcdatamodel */;
+			path = ExpenseTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E1572B9F28B4006500800780 /* Project object */;
 }

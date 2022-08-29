@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class ExpensesListPresenter: ExpensesListViewToPresenterProtocol {
     var interactor: ExpensesListPresenterToInteractorProtocol?
@@ -14,6 +15,10 @@ final class ExpensesListPresenter: ExpensesListViewToPresenterProtocol {
     
     func viewLoaded() {
         
+    }
+    
+    func didTapAddTransactionButton(fromController controller: UIViewController) {
+        router?.presentAddTransaction(on: controller)
     }
 }
 

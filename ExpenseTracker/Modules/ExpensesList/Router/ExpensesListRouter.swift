@@ -25,4 +25,10 @@ final class ExpensesListRouter: ExpensesListPresenterToRouterProtocol {
         
         return controller
     }
+    
+    func presentAddTransaction(on controller: UIViewController) {
+        let addTransactionController = AddTransactionRouter.createModule()
+        let navController = UINavigationController(rootViewController: addTransactionController)
+        controller.present(navController, animated: true, completion: nil)
+    }
 }

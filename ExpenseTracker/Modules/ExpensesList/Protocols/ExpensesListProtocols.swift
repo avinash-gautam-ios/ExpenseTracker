@@ -16,6 +16,8 @@ protocol ExpensesListViewToPresenterProtocol: AnyObject {
     var view: ExpensesListPresenterToViewProtocol? { get set }
     
     func viewLoaded()
+    
+    func didTapAddTransactionButton(fromController controller: UIViewController)
 }
 
 // Presenter -> View
@@ -34,6 +36,8 @@ protocol ExpensesListPresenterToInteractorProtocol: AnyObject {
 
 protocol ExpensesListPresenterToRouterProtocol: AnyObject {
     static func createModule() -> UIViewController
+    
+    func presentAddTransaction(on controller: UIViewController)
 }
 
 // Interactor -> Presenter
