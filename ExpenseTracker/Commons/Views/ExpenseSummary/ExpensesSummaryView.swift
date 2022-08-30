@@ -95,7 +95,7 @@ final class ExpensesSummaryView: UIView {
         expenseItemView.configure(withTitle: AppStrings.expensesText, amount: summary.expense)
         incomeItemView.configure(withTitle: AppStrings.transactionTypeIncome, amount: summary.income)
         balanceItemView.configure(withTitle: AppStrings.balanceText, amount: summary.balance)
-        progressView.progress = Float(summary.expense/summary.income)
+        progressView.progress = Float(1 - summary.expense/summary.income)
     }
     
 }
