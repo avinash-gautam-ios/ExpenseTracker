@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 final class ExpensesListPresenter: ExpensesListViewToPresenterProtocol {
     
@@ -21,26 +22,38 @@ final class ExpensesListPresenter: ExpensesListViewToPresenterProtocol {
     }
     
     func viewLoaded() {
-        view?.didUpdateViewState(.content(buttonTitle: AppStrings.addTransactionPageTitle))
+        let defaultExpenseSummary = ExpenseSummary(income: 0,
+                                                   expense: 0,
+                                                   balance: 0)
+        
+        view?.didUpdateViewState(.content(buttonTitle: AppStrings.addTransactionPageTitle,
+                                          expenseSummary: defaultExpenseSummary))
         setupDatabase()
         fetchLatestTransactions()
     }
     
     func fetchLatestTransactions() {
-        interactor?.fetchTransactions { [weak self] transactions, error in
-            guard let self = self,
-                  let transactions = transactions else {
-                      return
-                  }
+        do {
+            let transactions = try interactor?.fetchTransactions()
+            guard let transactions = transactions else {
+                view?.didUpdateViewState(.empty)
+                return
+            }
             
             /// reset datasource with latest transactions
-            self.datasource.reset()
-            self.datasource.add(transactions: transactions)
+            datasource.reset()
+            datasource.add(transactions: transactions)
             
-            /// update view state to reload table
-            ExecuteImp.onMain {
-                self.view?.didUpdateViewState(.reloadTable)
+            /// update view
+            view?.didUpdateViewState(.reloadTable)
+            
+            if let expenseSummary = self.interactor?
+                .computeExpense(fromTransactions: transactions) {
+                self.view?.didUpdateViewState(.content(buttonTitle: AppStrings.addTransactionPageTitle,
+                                                       expenseSummary: expenseSummary))
             }
+        } catch {
+            view?.didUpdateViewState(.error(error: error))
         }
     }
     
@@ -56,7 +69,7 @@ final class ExpensesListPresenter: ExpensesListViewToPresenterProtocol {
         return datasource.sections[section].items.count
     }
     
-    func dataForRow(atSection section: Int, index: Int) -> Transaction {
+    func itemForRow(inSection section: Int, atIndex index: Int) -> Transaction {
         return datasource.sections[section].items[index]
     }
     
@@ -64,10 +77,12 @@ final class ExpensesListPresenter: ExpensesListViewToPresenterProtocol {
         return datasource.sections[index]
     }
     
-    func deleteItem(inSection section: Int, atIndex index: Int) {
-        let transaction = datasource.sections[section].items[index]
+    func removeItem(inSection section: Int, atIndex index: Int) {
         datasource.deleteItem(inSection: section, atIndex: index)
-        interactor?.delete(transaction: transaction)
+    }
+    
+    func delete(item: Transaction) {
+        interactor?.delete(transaction: item)
     }
 }
 

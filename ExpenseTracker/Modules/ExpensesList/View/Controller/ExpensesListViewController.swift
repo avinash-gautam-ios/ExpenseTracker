@@ -14,13 +14,17 @@ import CoreData
 
 enum ExpensesListViewState {
     /// load basic content on the screen
-    case content(buttonTitle: String)
+    case content(buttonTitle: String,
+                 expenseSummary: ExpenseSummary)
     
     /// reload table
     case reloadTable
     
     /// handle empty state
     case empty
+    
+    /// handle error state
+    case error(error: Error)
 }
 
 
@@ -44,6 +48,13 @@ final class ExpensesListViewController: UIViewController {
         return button
     }()
     
+    private let summaryView: ExpensesSummaryView = {
+        let view = ExpensesSummaryView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,16 +69,24 @@ final class ExpensesListViewController: UIViewController {
         
         view.backgroundColor = Theme.BackgroundColor.viewBackgroundColor
         tableView.backgroundColor = Theme.BackgroundColor.viewBackgroundColor
+        tableView.separatorStyle = .none
         tableView.register(cell: ExpensesListTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         
+        view.addSubview(summaryView)
+        NSLayoutConstraint.activate([
+            summaryView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Theme.Padding.padding0),
+            summaryView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Theme.Padding.padding10),
+            summaryView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Theme.Padding.padding10),
+        ])
+        
         /// tableview
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Theme.Padding.padding0),
-            tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: Theme.Padding.padding0),
-            tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: Theme.Padding.padding0)
+            tableView.topAnchor.constraint(equalTo: summaryView.bottomAnchor, constant: Theme.Padding.padding10),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Theme.Padding.padding10),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Theme.Padding.padding10)
         ])
         
         /// button
@@ -92,26 +111,35 @@ final class ExpensesListViewController: UIViewController {
 extension ExpensesListViewController: ExpensesListPresenterToViewProtocol {
     func didUpdateViewState(_ state: ExpensesListViewState) {
         switch state {
-        case .content(let buttonTitle):
-            handleContentState(buttonTitle: buttonTitle)
+        case .content(buttonTitle: let buttonTitle,
+                      expenseSummary: let expenseSummary):
+            handleContentState(buttonTitle: buttonTitle,
+                               expenseSummary: expenseSummary)
         case .reloadTable:
             tableView.reloadData()
         case .empty:
             handleEmptyState()
+        case .error(error: let error):
+            handleErrorState(error)
         }
     }
     
-    private func handleContentState(buttonTitle: String) {
+    private func handleContentState(buttonTitle: String, expenseSummary: ExpenseSummary) {
         addTransactionButton.setTitle(buttonTitle, for: .normal)
+        summaryView.configure(withSummary: expenseSummary)
     }
     
     private func handleEmptyState() {
         //TODO: Show empty state view here
     }
+    
+    private func handleErrorState(_ error: Error) {
+        
+    }
 }
 
 
-// MARK: - Tableview
+// MARK: - TableView
 
 extension ExpensesListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -121,7 +149,8 @@ extension ExpensesListViewController: UITableViewDelegate, UITableViewDataSource
             .flatMap { $0 as? ExpensesListTableViewCell } ?? ExpensesListTableViewCell()
         cell.selectionStyle = .none
         if let presenter = presenter {
-            let data = presenter.dataForRow(atSection: indexPath.section, index: indexPath.row)
+            let data = presenter.itemForRow(inSection: indexPath.section,
+                                            atIndex: indexPath.row)
             cell.configure(withTransaction: data)
         }
         return cell
@@ -141,11 +170,17 @@ extension ExpensesListViewController: UITableViewDelegate, UITableViewDataSource
         return presenter?.sectionItem(atIndex: section).title ?? nil
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete),
            let presenter = presenter {
+            /// 1. Remove item from datasource
             let section = presenter.sectionItem(atIndex: indexPath.section)
-            presenter.deleteItem(inSection: indexPath.section, atIndex: indexPath.row)
+            let transaction = section.items[indexPath.row]
+            presenter.removeItem(inSection: indexPath.section, atIndex: indexPath.row)
+            
+            /// 2. Remove item from tableview with animation
             
             /// check if this is the last item in section
             if section.items.count >= 2 {
@@ -154,6 +189,9 @@ extension ExpensesListViewController: UITableViewDelegate, UITableViewDataSource
                 /// if this is last item in section, remove the entire section
                 tableView.deleteSections([indexPath.section], with: .fade)
             }
+            
+            /// 3. Update the database
+            presenter.delete(item: transaction)
         }
     }
 }

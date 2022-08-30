@@ -10,7 +10,6 @@ import Foundation
 struct ExpensesListTableSection {
     let items: [Transaction]
     let title: String
-    let date: Date
 }
 
 final class ExpensesListDatasource {
@@ -30,21 +29,18 @@ final class ExpensesListDatasource {
     
     func add(transaction: Transaction) {
         /// update exisiting section with new item, if it exists
-        if let index = sections.firstIndex(where: { $0.date == DateFormatter.dateRemovingExtras(fromDate: transaction.dateAdded) }) {
+        let transactionDateString = transaction.createdAt.toString()
+        if let index = sections.firstIndex(where: { $0.title == transactionDateString }) {
             let section = sections[index]
             var items = section.items
             items.append(transaction)
             let newSection = ExpensesListTableSection(items: items,
-                                                      title: section.title,
-                                                      date: section.date)
+                                                      title: section.title)
             sections[index] = newSection
         } else {
             /// else, add new section with this new item
-            let date = DateFormatter.dateRemovingExtras(fromDate: transaction.dateAdded)
-            let title = DateFormatter.toString(forDate: transaction.dateAdded)
             let newSection = ExpensesListTableSection(items: [transaction],
-                                                      title: title,
-                                                      date: date)
+                                                      title: transactionDateString)
             sections.append(newSection)
         }
     }
@@ -67,8 +63,7 @@ final class ExpensesListDatasource {
         
         if (items.count > 0) {
             let newSectionData = ExpensesListTableSection(items: items,
-                                                      title: sectionData.title,
-                                                      date: sectionData.date)
+                                                          title: sectionData.title)
             sections[section] = newSectionData
         } else {
             sections.remove(at: section)

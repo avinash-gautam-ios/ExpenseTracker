@@ -156,7 +156,7 @@ final class RadioButtonView: UIView {
         NSLayoutConstraint.activate([
             optionView2.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Theme.Padding.padding5),
             optionView2.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Theme.Padding.padding5),
-            optionView2.leftAnchor.constraint(equalTo: optionView1.rightAnchor, constant: Theme.Padding.padding5),
+            optionView2.leadingAnchor.constraint(equalTo: optionView1.trailingAnchor, constant: Theme.Padding.padding5),
             optionView2.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor, constant: -Theme.Padding.padding5),
             optionView1.widthAnchor.constraint(equalToConstant: width)
         ])

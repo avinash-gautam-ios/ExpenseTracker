@@ -23,7 +23,7 @@ final class ExpensesListTableViewCell: UITableViewCell {
     private let transactionAmountLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.font = Theme.Font.amountFont
+        label.font = Theme.Font.descriptionFont
         label.textAlignment = .right
         label.textColor = Theme.Color.descriptionColor
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ final class ExpensesListTableViewCell: UITableViewCell {
         transactionDescriptionLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         NSLayoutConstraint.activate([
             transactionDescriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Theme.Padding.padding10),
-            transactionDescriptionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Theme.Padding.padding10),
+            transactionDescriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Theme.Padding.padding10),
             transactionDescriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Theme.Padding.padding10)
         ])
         
@@ -83,10 +83,10 @@ final class ExpensesListTableViewCell: UITableViewCell {
         switch transaction.type {
         case .income:
             transactionAmountLabel.textColor = Theme.Color.incomeAmountColor
-            transactionAmountLabel.text = String(format: "+ %.2f", transaction.amount)
+            transactionAmountLabel.text = String(format: "+ $%.2f", transaction.amount.rounded(toPlaces: 2))
         case .expense:
             transactionAmountLabel.textColor = Theme.Color.expenseAmountColor
-            transactionAmountLabel.text = String(format: "- %.2f", transaction.amount)
+            transactionAmountLabel.text = String(format: "- $%.2f", transaction.amount.rounded(toPlaces: 2))
         }
     }
 }

@@ -14,18 +14,12 @@ final class DatabaseHelper {
     
     private init() { }
     
-    func fetchTransactions(_ completion: ([Transaction]?, Error?) -> Void) {
+    func fetchTransactions() throws -> [Transaction] {
         let request = Transaction.fetchRequest()
         request.returnsObjectsAsFaults = false
-        request.fetchLimit = 20
-        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Transaction.dateAdded),
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Transaction.createdAt),
                                                     ascending: false)]
-        do {
-            let results = try PersistenceContainer.shared.viewContext.fetch(request) as! [Transaction]
-            completion(results, nil)
-        } catch {
-            completion(nil, error)
-        }
+        return try PersistenceContainer.shared.viewContext.fetch(request) as! [Transaction]
     }
     
     func deleteTransaction(item: Transaction) {
@@ -58,5 +52,13 @@ final class DatabaseHelper {
                 DebugLogger.shared.log(type: .error, error.localizedDescription)
             }
         }
+    }
+    
+    func fetchAllTransactions(ofType type: TransactionType) throws -> [Transaction] {
+        let request = Transaction.fetchRequest()
+        request.returnsObjectsAsFaults = false
+        request.propertiesToFetch = [#keyPath(Transaction.amount)]
+        request.predicate = NSPredicate(format: "type == %@", type.rawValue)
+        return try PersistenceContainer.shared.viewContext.fetch(request) as! [Transaction]
     }
 }

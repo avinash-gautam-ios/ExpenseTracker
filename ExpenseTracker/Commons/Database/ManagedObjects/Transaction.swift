@@ -28,11 +28,18 @@ final class Transaction: NSManagedObject, Identifiable {
     @NSManaged public var statement: String
     @NSManaged public var amount: Double
     @NSManaged public var type: TransactionType
-    
-    /// derived attribute, added using `Date.now()`
-    @NSManaged public var dateAdded: Date
+    @NSManaged public var createdAt: Date
     
     @nonobjc public class func getFetchRequest() -> NSFetchRequest<Transaction> {
         return NSFetchRequest<Transaction>(entityName: "Transaction")
+    }
+}
+
+extension Transaction {
+    override func awakeFromInsert() {
+        super.awakeFromInsert()
+        
+        /// adding default valut to the date attribute, unless passed
+        setPrimitiveValue(Date(), forKey: #keyPath(Transaction.createdAt))
     }
 }

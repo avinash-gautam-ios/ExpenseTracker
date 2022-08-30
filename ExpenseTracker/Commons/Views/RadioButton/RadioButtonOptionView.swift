@@ -26,7 +26,7 @@ final class RadioButtonOptionView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
-        label.font = Theme.Font.amountFont
+        label.font = Theme.Font.descriptionFont
         label.textAlignment = .left
         label.textColor = Theme.Color.descriptionColor
         return label
@@ -66,27 +66,27 @@ final class RadioButtonOptionView: UIView {
     private func configureUI() {
         addSubview(radioImageView)
         NSLayoutConstraint.activate([
-            radioImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: Theme.Padding.padding5),
-            radioImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: Theme.Padding.padding5),
+            radioImageView.topAnchor.constraint(equalTo: topAnchor, constant: Theme.Padding.padding5),
+            radioImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Theme.Padding.padding5),
             radioImageView.heightAnchor.constraint(equalToConstant: Theme.IconSize.medium),
             radioImageView.widthAnchor.constraint(equalToConstant: Theme.IconSize.medium)
         ])
         
         addSubview(descriptionLabel)
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: Theme.Padding.padding5),
-            descriptionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Theme.Padding.padding5),
-            descriptionLabel.leftAnchor.constraint(equalTo: radioImageView.rightAnchor, constant: Theme.Padding.padding10),
-            descriptionLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -Theme.Padding.padding5)
+            descriptionLabel.topAnchor.constraint(equalTo: topAnchor, constant: Theme.Padding.padding5),
+            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Theme.Padding.padding5),
+            descriptionLabel.leadingAnchor.constraint(equalTo: radioImageView.trailingAnchor, constant: Theme.Padding.padding10),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Theme.Padding.padding5)
         ])
      
         addSubview(touchButton)
         touchButton.addTarget(self, action: #selector(touchButtonDidTap), for: .touchUpInside)
         NSLayoutConstraint.activate([
-            touchButton.topAnchor.constraint(equalTo: self.topAnchor),
-            touchButton.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            touchButton.leftAnchor.constraint(equalTo: self.leftAnchor),
-            touchButton.rightAnchor.constraint(equalTo: self.rightAnchor),
+            touchButton.topAnchor.constraint(equalTo: topAnchor),
+            touchButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            touchButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            touchButton.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
         
         /// fill in data

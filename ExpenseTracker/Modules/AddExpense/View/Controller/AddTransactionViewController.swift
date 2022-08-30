@@ -36,6 +36,7 @@ final class AddTransactionViewController: UIViewController {
     private let addButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = Theme.Color.buttonColor
+        button.layer.cornerRadius = Theme.CornerRadius.default
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -63,8 +64,8 @@ final class AddTransactionViewController: UIViewController {
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Theme.Padding.padding0),
-            tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: Theme.Padding.padding0),
-            tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: Theme.Padding.padding0)
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Theme.Padding.padding0),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: Theme.Padding.padding0)
         ])
         
         view.addSubview(addButton)

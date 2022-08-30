@@ -17,9 +17,8 @@ enum Theme {
     
     enum Font {
         static let headerFont = UIFont.boldSystemFont(ofSize: 18)
-        static let titleFont = UIFont.systemFont(ofSize: 16)
+        static let titleFont = UIFont.boldSystemFont(ofSize: 16)
         static let descriptionFont = UIFont.systemFont(ofSize: 14)
-        static let amountFont = UIFont.boldSystemFont(ofSize: 14)
     }
     
     enum Color {

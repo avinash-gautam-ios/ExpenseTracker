@@ -21,7 +21,7 @@ final class TransactionTextFieldTableCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
-        label.font = Theme.Font.amountFont
+        label.font = Theme.Font.titleFont
         label.textAlignment = .left
         label.textColor = Theme.Color.descriptionColor
         return label

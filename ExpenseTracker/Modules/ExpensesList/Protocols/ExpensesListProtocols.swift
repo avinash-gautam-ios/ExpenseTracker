@@ -25,12 +25,14 @@ protocol ExpensesListViewToPresenterProtocol: AnyObject {
     /// called to fetch latest transactions
     func fetchLatestTransactions()
     
+    func delete(item: Transaction)
+    
     /// tableview
     func numberOfSections() -> Int
     func numberOfRows(inSection section: Int) -> Int
-    func dataForRow(atSection section: Int, index: Int) -> Transaction
+    func itemForRow(inSection section: Int, atIndex index: Int) -> Transaction
     func sectionItem(atIndex index: Int) -> ExpensesListTableSection
-    func deleteItem(inSection section: Int, atIndex index: Int)
+    func removeItem(inSection section: Int, atIndex index: Int)
 }
 
 
@@ -48,10 +50,13 @@ protocol ExpensesListPresenterToViewProtocol: AnyObject {
 
 protocol ExpensesListPresenterToInteractorProtocol: AnyObject {
     /// fetch transactions
-    func fetchTransactions(_ completion: @escaping ([Transaction]?, Error?) -> Void)
+    func fetchTransactions() throws -> [Transaction]
     
     /// delete transaction
     func delete(transaction: Transaction)
+    
+    /// compute expenses
+    func computeExpense(fromTransactions transactions: [Transaction]) -> ExpenseSummary
 }
 
 

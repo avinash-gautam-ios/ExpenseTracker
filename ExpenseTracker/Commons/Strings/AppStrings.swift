@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// represents app wide strings
+///
+
 enum AppStrings {
     static let addTransactionPageTitle = "Add Transaction"
     static let addTransactionButton = "Add"
@@ -23,4 +26,6 @@ enum AppStrings {
     static let allFieldsEmptyMessage = "All fields are mandatory. Please check before adding any transaction"
     static let transactionAmountEmptyMessage = "Looks like you forgot to add the amount for the transaction you have made, please take a look"
     static let expensesListPageTitle = "Expenses Tracker"
+    static let expensesText = "Expenses"
+    static let balanceText = "Balance"
 }
