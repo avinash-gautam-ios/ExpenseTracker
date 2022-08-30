@@ -73,3 +73,5 @@ Some items which can be worked upon and improved, there by increasing the overal
 - Using some sort of currency formatter to format amount to display currencies. 
 - Localization support to the app
  
+### WIP
+- Unit Tests
