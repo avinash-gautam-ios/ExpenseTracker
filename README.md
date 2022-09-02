@@ -13,9 +13,9 @@ The features which you can use as part of the application inlcudes:
 - Once done, press the `Save Transaction` button
 - You can see your new transaction added on the home screen
 
-![Simulator Screen Shot - iPhone 12 - 2022-08-30 at 01 47 07](https://user-images.githubusercontent.com/12506196/187290568-e01d1cb9-8490-4cf4-85f1-75522058744c.png)
+![Simulator Screen Shot - iPhone 12 - 2022-08-31 at 02 32 54](https://user-images.githubusercontent.com/12506196/187550088-515c7343-452d-4eae-bf9d-d6d9dc1ed4dc.png)
 
-![Simulator Screen Shot - iPhone 12 - 2022-08-30 at 01 46 45](https://user-images.githubusercontent.com/12506196/187290639-710df232-5f78-4d8b-8296-cf828354ec75.png)
+![Simulator Screen Shot - iPhone 12 - 2022-08-31 at 02 27 18](https://user-images.githubusercontent.com/12506196/187550100-facab91a-c380-482c-a296-496b1e0d2b46.png)
 
 
 #### 2. Deleting Expense
@@ -52,6 +52,26 @@ Add expense VIPER module is responsbile for adding transaction. The communicatio
 
 ![addexpense_component](https://user-images.githubusercontent.com/12506196/187289616-3ea35f84-3846-49f4-a4d6-af44445e4109.png)
 
+### Classes
+#### DatabaseHelper
+This class works like a helper class to fetch or perform common operations on the database.
 
+#### PersistenceContainer
+This class takes care of loading the database into the memory.
 
+### Future Scope of the application
+Some new features can be added as part of the application such as:
+- Sorting by amount
+- Filter for a specific date
+- Filter for a specific type of transaction
+
+### Technical Improvements
+Some items which can be worked upon and improved, there by increasing the overall app performance includes:
+- Using NSFetchedResultsController for fetching transactions with tableview for smooth adding and deleting the transactions
+- Some way to optimize summary computation, like not fetching all the records and running through them
+- Using fetchLimit on fetching the transactions to not load a lot of data into memory, which might not be required
+- Using some sort of currency formatter to format amount to display currencies. 
+- Localization support to the app
  
+### WIP
+- Unit Tests
