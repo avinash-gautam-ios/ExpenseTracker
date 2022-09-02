@@ -55,7 +55,7 @@ protocol AddTransactionPresenterToInteractorProtocol: AnyObject {
     /// - description: a statement describing transaction
     func addTransaction(withAmount amount: Double,
                         type: TransactionType,
-                        description: String)
+                        statement: String)
 }
 
 
@@ -63,7 +63,8 @@ protocol AddTransactionPresenterToInteractorProtocol: AnyObject {
 ///
 
 protocol AddTransactionPresenterToRouterProtocol: AnyObject {
-    static func createModule() -> UIViewController
+    static func createModule(databaseManager: DatabaseManager,
+                             logger: Logger) -> UIViewController
 }
 
 

@@ -7,12 +7,26 @@
 
 import Foundation
 
+protocol ExpensesListDatasource {
+    
+    var sections: [ExpensesListTableSection] { get }
+    
+    func add(transactions: [Transaction])
+    
+    func add(transaction: Transaction)
+ 
+    func reset()
+    
+    func deleteItem(inSection section: Int, atIndex index: Int)
+}
+
+
 struct ExpensesListTableSection {
     let items: [Transaction]
     let title: String
 }
 
-final class ExpensesListDatasource {
+final class ExpensesListDatasourceImp: ExpensesListDatasource {
     
     private(set) var sections: [ExpensesListTableSection] = []
     

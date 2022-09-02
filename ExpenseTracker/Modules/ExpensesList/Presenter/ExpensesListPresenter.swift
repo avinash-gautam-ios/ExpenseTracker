@@ -16,19 +16,21 @@ final class ExpensesListPresenter: ExpensesListViewToPresenterProtocol {
     weak var view: ExpensesListPresenterToViewProtocol?
     
     private let datasource: ExpensesListDatasource
+    private let logger: Logger
     
-    init() {
-        self.datasource = ExpensesListDatasource()
+    init(logger: Logger,
+         datasource: ExpensesListDatasource) {
+        self.logger = logger
+        self.datasource = datasource
     }
     
     func viewLoaded() {
         let defaultExpenseSummary = ExpenseSummary(income: 0,
                                                    expense: 0,
                                                    balance: 0)
-        
         view?.didUpdateViewState(.content(buttonTitle: AppStrings.addTransactionPageTitle,
                                           expenseSummary: defaultExpenseSummary))
-        setupDatabase()
+        setupDatabaseNotifications()
         fetchLatestTransactions()
     }
     
@@ -95,7 +97,7 @@ extension ExpensesListPresenter {
     /// as soon as an item is added into the database
     ///
     
-    private func setupDatabase() {
+    private func setupDatabaseNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(contextDidSave),
                                                name: Notification.Name.NSManagedObjectContextDidSave,

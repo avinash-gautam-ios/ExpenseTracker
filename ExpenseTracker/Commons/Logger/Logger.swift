@@ -31,17 +31,19 @@ protocol Logger: Any {
 
 final class DebugLogger: Logger {
     
-    private struct Static {
-        static let S = DebugLogger()
-    }
-    
-    static var shared: Logger {
-        return Static.S
-    }
+    init() { }
     
     func log(type: LogType, _ message: Any) {
         #if DEBUG
         print(type.prefix + "\(message)")
         #endif
     }
+}
+
+final class ProdLogger: Logger {
+    
+    init() { }
+    
+    /// dont print anything in production
+    func log(type: LogType, _ message: Any) { }
 }

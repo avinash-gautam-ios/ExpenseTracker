@@ -10,15 +10,23 @@ import Foundation
 final class ExpensesListInteractor: ExpensesListPresenterToInteractorProtocol {
     
     weak var presenter: ExpensesListInteractorToPresenterProtocol?
+    private let databaseManager: DatabaseManager
+    private let logger: Logger
     
-    private let helper = DatabaseHelper.shared
+    init(databaseManager: DatabaseManager,
+         logger: Logger) {
+        self.databaseManager = databaseManager
+        self.logger = logger
+    }
     
     func fetchTransactions() throws -> [Transaction] {
-        try helper.fetchTransactions()
+        logger.log(type: .message, "Fetching transactions")
+        return try databaseManager.fetchTransactions()
     }
     
     func delete(transaction: Transaction) {
-        helper.deleteTransaction(item: transaction)
+        logger.log(type: .message, "Deleting transactions ---> \(transaction.debugDescription)")
+        databaseManager.delete(transaction: transaction)
     }
     
     func computeExpense(fromTransactions transactions: [Transaction]) -> ExpenseSummary {

@@ -10,13 +10,21 @@ import Foundation
 final class AddTransactionInteractor: AddTransactionPresenterToInteractorProtocol {
     
     weak var presenter: AddTransactionInteractorToPresenterProtocol?
+    private let databaseManager: DatabaseManager
+    private let logger: Logger
     
-    func addTransaction(withAmount amount: Double, type: TransactionType, description: String) {
-        let transaction = Transaction(context: PersistenceContainer.shared.viewContext)
-        transaction.amount = amount
-        transaction.type = type
-        transaction.statement = description
-        PersistenceContainer.shared.saveContext()
+    init(databaseManager: DatabaseManager,
+         logger: Logger) {
+        self.databaseManager = databaseManager
+        self.logger = logger
+    }
+    
+    func addTransaction(withAmount amount: Double,
+                        type: TransactionType,
+                        statement: String) {
+        databaseManager.addTransaction(withType: type,
+                                       amount: amount,
+                                       statement: statement)
         
         /// update presenter
         presenter?.didFinishSavingTransaction()

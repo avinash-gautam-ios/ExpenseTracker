@@ -14,9 +14,11 @@ final class AddTransactionPresenter: AddTransactionViewToPresenterProtocol {
     weak var view: AddTransactionPresenterToViewProtocol?
     
     private let datasource: AddTransactionTableDatasource
+    private let logger: Logger
     
-    init() {
-        datasource = AddTransactionTableDatasource()
+    init(logger: Logger) {
+        self.logger = logger
+        self.datasource = AddTransactionTableDatasource()
     }
     
     func viewLoaded() {
@@ -59,7 +61,7 @@ final class AddTransactionPresenter: AddTransactionViewToPresenterProtocol {
         
         interactor?.addTransaction(withAmount: amount,
                                    type: type,
-                                   description: description)
+                                   statement: description)
     }
 }
 

@@ -11,9 +11,6 @@
 		E1572BAD28B4006600800780 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BAC28B4006600800780 /* SceneDelegate.swift */; };
 		E1572BB428B4006600800780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1572BB328B4006600800780 /* Assets.xcassets */; };
 		E1572BB728B4006600800780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1572BB528B4006600800780 /* LaunchScreen.storyboard */; };
-		E1572BC228B4006600800780 /* ExpenseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BC128B4006600800780 /* ExpenseTrackerTests.swift */; };
-		E1572BCC28B4006600800780 /* ExpenseTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BCB28B4006600800780 /* ExpenseTrackerUITests.swift */; };
-		E1572BCE28B4006600800780 /* ExpenseTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BCD28B4006600800780 /* ExpenseTrackerUITestsLaunchTests.swift */; };
 		E1572BED28B4026800800780 /* ExpensesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BEC28B4026800800780 /* ExpensesListViewController.swift */; };
 		E1572BEF28B4028F00800780 /* ExpensesListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BEE28B4028F00800780 /* ExpensesListProtocols.swift */; };
 		E1572BF128B4039C00800780 /* ExpensesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572BF028B4039C00800780 /* ExpensesListInteractor.swift */; };
@@ -28,11 +25,9 @@
 		E1572C0328B40B1000800780 /* AddTransactionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0228B40B1000800780 /* AddTransactionRouter.swift */; };
 		E1572C0928B4904D00800780 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0828B4904D00800780 /* UITableViewCellExtension.swift */; };
 		E1572C0B28B490F100800780 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0A28B490F100800780 /* UITableViewExtension.swift */; };
-		E1572C0E28B4918500800780 /* Execute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0D28B4918500800780 /* Execute.swift */; };
 		E1572C1028B4921A00800780 /* ExpensesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C0F28B4921A00800780 /* ExpensesListTableViewCell.swift */; };
 		E1572C1328B493D000800780 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1228B493D000800780 /* Theme.swift */; };
 		E1572C1A28B49A8A00800780 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1928B49A8A00800780 /* DoubleExtension.swift */; };
-		E1572C1D28B4B71F00800780 /* PersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */; };
 		E1572C2028B4B74B00800780 /* ExpenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1572C1E28B4B74B00800780 /* ExpenseTracker.xcdatamodeld */; };
 		E1572C2C28B4BAED00800780 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C2A28B4BAED00800780 /* Transaction.swift */; };
 		E1572C3028BC94E800800780 /* TransactionTextFieldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C2F28BC94E800800780 /* TransactionTextFieldTableCell.swift */; };
@@ -42,23 +37,26 @@
 		E1572C3928BCBDBE00800780 /* AddTransactionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3828BCBDBE00800780 /* AddTransactionDatasource.swift */; };
 		E1572C3D28BCE0A200800780 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3C28BCE0A200800780 /* AppStrings.swift */; };
 		E1572C4028BCEFD200800780 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C3F28BCEFD200800780 /* StringExtension.swift */; };
-		E1572C4328BD0C9E00800780 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4228BD0C9E00800780 /* DatabaseHelper.swift */; };
 		E1572C4528BD0CF700800780 /* ExpensesListDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4428BD0CF700800780 /* ExpensesListDatasource.swift */; };
 		E1572C4928BD226800800780 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4828BD226800800780 /* DateFormatterExtension.swift */; };
 		E1572C4C28BD3E7100800780 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C4B28BD3E7100800780 /* Logger.swift */; };
 		E1572C5728BDDDEC00800780 /* ExpenseSummaryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C5628BDDDEC00800780 /* ExpenseSummaryItemView.swift */; };
 		E1572C5928BDE37E00800780 /* ExpensesSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C5828BDE37E00800780 /* ExpensesSummaryView.swift */; };
+		E1572C5F28C2260300800780 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C5E28C2260300800780 /* DatabaseManager.swift */; };
+		E1572C6228C22BBB00800780 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C6128C22BBB00800780 /* DependencyManager.swift */; };
+		E1572C6428C22D6000800780 /* RootDependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C6328C22D6000800780 /* RootDependencyRegistry.swift */; };
+		E1572C6728C238B100800780 /* ExpensesListMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C6628C238B100800780 /* ExpensesListMock.swift */; };
+		E1572C6B28C23D2D00800780 /* MockDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C6A28C23D2D00800780 /* MockDatabaseManager.swift */; };
+		E1572C6D28C23E7000800780 /* MockDependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C6C28C23E7000800780 /* MockDependencyRegistry.swift */; };
+		E1572C6F28C23EDC00800780 /* MockLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C6E28C23EDC00800780 /* MockLogger.swift */; };
+		E1572C7128C23F4200800780 /* ExpensesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C7028C23F4200800780 /* ExpensesListPresenterTests.swift */; };
+		E1572C7328C2493A00800780 /* ExpensesListInteratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C7228C2493A00800780 /* ExpensesListInteratorTests.swift */; };
+		E1572C7528C24DA600800780 /* ExpensesListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C7428C24DA600800780 /* ExpensesListViewTests.swift */; };
+		E1572C7728C252CA00800780 /* ExpensesListRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1572C7628C252CA00800780 /* ExpensesListRouterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		E1572BBE28B4006600800780 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1572B9F28B4006500800780 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E1572BA628B4006600800780;
-			remoteInfo = ExpenseTracker;
-		};
-		E1572BC828B4006600800780 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1572B9F28B4006500800780 /* Project object */;
 			proxyType = 1;
@@ -75,10 +73,6 @@
 		E1572BB628B4006600800780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1572BB828B4006600800780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1572BBD28B4006600800780 /* ExpenseTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1572BC128B4006600800780 /* ExpenseTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerTests.swift; sourceTree = "<group>"; };
-		E1572BC728B4006600800780 /* ExpenseTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1572BCB28B4006600800780 /* ExpenseTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerUITests.swift; sourceTree = "<group>"; };
-		E1572BCD28B4006600800780 /* ExpenseTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1572BEC28B4026800800780 /* ExpensesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListViewController.swift; sourceTree = "<group>"; };
 		E1572BEE28B4028F00800780 /* ExpensesListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListProtocols.swift; sourceTree = "<group>"; };
 		E1572BF028B4039C00800780 /* ExpensesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListInteractor.swift; sourceTree = "<group>"; };
@@ -93,11 +87,9 @@
 		E1572C0228B40B1000800780 /* AddTransactionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionRouter.swift; sourceTree = "<group>"; };
 		E1572C0828B4904D00800780 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		E1572C0A28B490F100800780 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
-		E1572C0D28B4918500800780 /* Execute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Execute.swift; sourceTree = "<group>"; };
 		E1572C0F28B4921A00800780 /* ExpensesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListTableViewCell.swift; sourceTree = "<group>"; };
 		E1572C1228B493D000800780 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E1572C1928B49A8A00800780 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
-		E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContainer.swift; sourceTree = "<group>"; };
 		E1572C1F28B4B74B00800780 /* ExpenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseTracker.xcdatamodel; sourceTree = "<group>"; };
 		E1572C2A28B4BAED00800780 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		E1572C2F28BC94E800800780 /* TransactionTextFieldTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTextFieldTableCell.swift; sourceTree = "<group>"; };
@@ -107,12 +99,22 @@
 		E1572C3828BCBDBE00800780 /* AddTransactionDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDatasource.swift; sourceTree = "<group>"; };
 		E1572C3C28BCE0A200800780 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		E1572C3F28BCEFD200800780 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		E1572C4228BD0C9E00800780 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		E1572C4428BD0CF700800780 /* ExpensesListDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListDatasource.swift; sourceTree = "<group>"; };
 		E1572C4828BD226800800780 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		E1572C4B28BD3E7100800780 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		E1572C5628BDDDEC00800780 /* ExpenseSummaryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSummaryItemView.swift; sourceTree = "<group>"; };
 		E1572C5828BDE37E00800780 /* ExpensesSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesSummaryView.swift; sourceTree = "<group>"; };
+		E1572C5E28C2260300800780 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		E1572C6128C22BBB00800780 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		E1572C6328C22D6000800780 /* RootDependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDependencyRegistry.swift; sourceTree = "<group>"; };
+		E1572C6628C238B100800780 /* ExpensesListMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListMock.swift; sourceTree = "<group>"; };
+		E1572C6A28C23D2D00800780 /* MockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseManager.swift; sourceTree = "<group>"; };
+		E1572C6C28C23E7000800780 /* MockDependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDependencyRegistry.swift; sourceTree = "<group>"; };
+		E1572C6E28C23EDC00800780 /* MockLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLogger.swift; sourceTree = "<group>"; };
+		E1572C7028C23F4200800780 /* ExpensesListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListPresenterTests.swift; sourceTree = "<group>"; };
+		E1572C7228C2493A00800780 /* ExpensesListInteratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListInteratorTests.swift; sourceTree = "<group>"; };
+		E1572C7428C24DA600800780 /* ExpensesListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListViewTests.swift; sourceTree = "<group>"; };
+		E1572C7628C252CA00800780 /* ExpensesListRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListRouterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,13 +132,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1572BC428B4006600800780 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -145,7 +140,6 @@
 			children = (
 				E1572BA928B4006600800780 /* ExpenseTracker */,
 				E1572BC028B4006600800780 /* ExpenseTrackerTests */,
-				E1572BCA28B4006600800780 /* ExpenseTrackerUITests */,
 				E1572BA828B4006600800780 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -155,7 +149,6 @@
 			children = (
 				E1572BA728B4006600800780 /* ExpenseTracker.app */,
 				E1572BBD28B4006600800780 /* ExpenseTrackerTests.xctest */,
-				E1572BC728B4006600800780 /* ExpenseTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,18 +169,10 @@
 		E1572BC028B4006600800780 /* ExpenseTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				E1572BC128B4006600800780 /* ExpenseTrackerTests.swift */,
+				E1572C6928C23D2300800780 /* Mocks */,
+				E1572C6528C2385C00800780 /* ExpensesList */,
 			);
 			path = ExpenseTrackerTests;
-			sourceTree = "<group>";
-		};
-		E1572BCA28B4006600800780 /* ExpenseTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E1572BCB28B4006600800780 /* ExpenseTrackerUITests.swift */,
-				E1572BCD28B4006600800780 /* ExpenseTrackerUITestsLaunchTests.swift */,
-			);
-			path = ExpenseTrackerUITests;
 			sourceTree = "<group>";
 		};
 		E1572BDA28B400E500800780 /* Root */ = {
@@ -195,6 +180,7 @@
 			children = (
 				E1572BAA28B4006600800780 /* AppDelegate.swift */,
 				E1572BAC28B4006600800780 /* SceneDelegate.swift */,
+				E1572C6328C22D6000800780 /* RootDependencyRegistry.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -266,12 +252,12 @@
 		E1572BE328B401F900800780 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				E1572C6028C22BA700800780 /* DependencyManager */,
 				E1572C4A28BD3E6800800780 /* Logger */,
 				E1572C3B28BCE09500800780 /* Strings */,
 				E1572C3328BC954A00800780 /* Views */,
 				E1572C1B28B4B6BE00800780 /* Database */,
 				E1572C1128B493C700800780 /* Theme */,
-				E1572C0C28B4917A00800780 /* Utils */,
 				E1572C0728B4903900800780 /* Extensions */,
 			);
 			path = Commons;
@@ -360,14 +346,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		E1572C0C28B4917A00800780 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				E1572C0D28B4918500800780 /* Execute.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		E1572C1128B493C700800780 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,7 +357,7 @@
 		E1572C1B28B4B6BE00800780 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				E1572C4128BD0C8D00800780 /* Helper */,
+				E1572C4128BD0C8D00800780 /* Manager */,
 				E1572C2528B4BA7E00800780 /* ManagedObjects */,
 				E1572C1E28B4B74B00800780 /* ExpenseTracker.xcdatamodeld */,
 			);
@@ -428,13 +406,12 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
-		E1572C4128BD0C8D00800780 /* Helper */ = {
+		E1572C4128BD0C8D00800780 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				E1572C1C28B4B71F00800780 /* PersistenceContainer.swift */,
-				E1572C4228BD0C9E00800780 /* DatabaseHelper.swift */,
+				E1572C5E28C2260300800780 /* DatabaseManager.swift */,
 			);
-			path = Helper;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		E1572C4A28BD3E6800800780 /* Logger */ = {
@@ -479,6 +456,36 @@
 			path = ExpenseSummary;
 			sourceTree = "<group>";
 		};
+		E1572C6028C22BA700800780 /* DependencyManager */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C6128C22BBB00800780 /* DependencyManager.swift */,
+			);
+			path = DependencyManager;
+			sourceTree = "<group>";
+		};
+		E1572C6528C2385C00800780 /* ExpensesList */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C6628C238B100800780 /* ExpensesListMock.swift */,
+				E1572C7028C23F4200800780 /* ExpensesListPresenterTests.swift */,
+				E1572C7228C2493A00800780 /* ExpensesListInteratorTests.swift */,
+				E1572C7428C24DA600800780 /* ExpensesListViewTests.swift */,
+				E1572C7628C252CA00800780 /* ExpensesListRouterTests.swift */,
+			);
+			path = ExpensesList;
+			sourceTree = "<group>";
+		};
+		E1572C6928C23D2300800780 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E1572C6A28C23D2D00800780 /* MockDatabaseManager.swift */,
+				E1572C6C28C23E7000800780 /* MockDependencyRegistry.swift */,
+				E1572C6E28C23EDC00800780 /* MockLogger.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -517,24 +524,6 @@
 			productReference = E1572BBD28B4006600800780 /* ExpenseTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E1572BC628B4006600800780 /* ExpenseTrackerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E1572BD728B4006600800780 /* Build configuration list for PBXNativeTarget "ExpenseTrackerUITests" */;
-			buildPhases = (
-				E1572BC328B4006600800780 /* Sources */,
-				E1572BC428B4006600800780 /* Frameworks */,
-				E1572BC528B4006600800780 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E1572BC928B4006600800780 /* PBXTargetDependency */,
-			);
-			name = ExpenseTrackerUITests;
-			productName = ExpenseTrackerUITests;
-			productReference = E1572BC728B4006600800780 /* ExpenseTrackerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -549,10 +538,6 @@
 						CreatedOnToolsVersion = 13.1;
 					};
 					E1572BBC28B4006600800780 = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = E1572BA628B4006600800780;
-					};
-					E1572BC628B4006600800780 = {
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = E1572BA628B4006600800780;
 					};
@@ -573,7 +558,6 @@
 			targets = (
 				E1572BA628B4006600800780 /* ExpenseTracker */,
 				E1572BBC28B4006600800780 /* ExpenseTrackerTests */,
-				E1572BC628B4006600800780 /* ExpenseTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -595,13 +579,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1572BC528B4006600800780 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -609,7 +586,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1572C4328BD0C9E00800780 /* DatabaseHelper.swift in Sources */,
 				E1572C4528BD0CF700800780 /* ExpensesListDatasource.swift in Sources */,
 				E1572BF128B4039C00800780 /* ExpensesListInteractor.swift in Sources */,
 				E1572C4028BCEFD200800780 /* StringExtension.swift in Sources */,
@@ -623,11 +599,11 @@
 				E1572C0128B40B0700800780 /* AddTransactionInteractor.swift in Sources */,
 				E1572BAD28B4006600800780 /* SceneDelegate.swift in Sources */,
 				E1572BF728B403C400800780 /* ExpensesListRouter.swift in Sources */,
-				E1572C0E28B4918500800780 /* Execute.swift in Sources */,
 				E1572C3028BC94E800800780 /* TransactionTextFieldTableCell.swift in Sources */,
 				E1572C3528BC955C00800780 /* RadioButtonView.swift in Sources */,
 				E1572C1028B4921A00800780 /* ExpensesListTableViewCell.swift in Sources */,
 				E1572BEF28B4028F00800780 /* ExpensesListProtocols.swift in Sources */,
+				E1572C5F28C2260300800780 /* DatabaseManager.swift in Sources */,
 				E1572BED28B4026800800780 /* ExpensesListViewController.swift in Sources */,
 				E1572C5728BDDDEC00800780 /* ExpenseSummaryItemView.swift in Sources */,
 				E1572C1A28B49A8A00800780 /* DoubleExtension.swift in Sources */,
@@ -637,12 +613,13 @@
 				E1572C4928BD226800800780 /* DateFormatterExtension.swift in Sources */,
 				E1572C4C28BD3E7100800780 /* Logger.swift in Sources */,
 				E1572C3928BCBDBE00800780 /* AddTransactionDatasource.swift in Sources */,
+				E1572C6428C22D6000800780 /* RootDependencyRegistry.swift in Sources */,
+				E1572C6228C22BBB00800780 /* DependencyManager.swift in Sources */,
 				E1572BF528B403B900800780 /* ExpensesListEntity.swift in Sources */,
 				E1572C3728BC9DDB00800780 /* RadioButtonOptionView.swift in Sources */,
 				E1572C2028B4B74B00800780 /* ExpenseTracker.xcdatamodeld in Sources */,
 				E1572C0B28B490F100800780 /* UITableViewExtension.swift in Sources */,
 				E1572C0328B40B1000800780 /* AddTransactionRouter.swift in Sources */,
-				E1572C1D28B4B71F00800780 /* PersistenceContainer.swift in Sources */,
 				E1572BF328B403A900800780 /* ExpensesListPresenter.swift in Sources */,
 				E1572BFD28B40AEC00800780 /* AddTransactionViewController.swift in Sources */,
 			);
@@ -652,16 +629,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1572BC228B4006600800780 /* ExpenseTrackerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1572BC328B4006600800780 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E1572BCE28B4006600800780 /* ExpenseTrackerUITestsLaunchTests.swift in Sources */,
-				E1572BCC28B4006600800780 /* ExpenseTrackerUITests.swift in Sources */,
+				E1572C7328C2493A00800780 /* ExpensesListInteratorTests.swift in Sources */,
+				E1572C6728C238B100800780 /* ExpensesListMock.swift in Sources */,
+				E1572C6D28C23E7000800780 /* MockDependencyRegistry.swift in Sources */,
+				E1572C7728C252CA00800780 /* ExpensesListRouterTests.swift in Sources */,
+				E1572C6B28C23D2D00800780 /* MockDatabaseManager.swift in Sources */,
+				E1572C7128C23F4200800780 /* ExpensesListPresenterTests.swift in Sources */,
+				E1572C7528C24DA600800780 /* ExpensesListViewTests.swift in Sources */,
+				E1572C6F28C23EDC00800780 /* MockLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,11 +647,6 @@
 			isa = PBXTargetDependency;
 			target = E1572BA628B4006600800780 /* ExpenseTracker */;
 			targetProxy = E1572BBE28B4006600800780 /* PBXContainerItemProxy */;
-		};
-		E1572BC928B4006600800780 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E1572BA628B4006600800780 /* ExpenseTracker */;
-			targetProxy = E1572BC828B4006600800780 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -916,52 +886,6 @@
 			};
 			name = Release;
 		};
-		E1572BD828B4006600800780 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XGS5TBSJ2B;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = avinash.ExpenseTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ExpenseTracker;
-			};
-			name = Debug;
-		};
-		E1572BD928B4006600800780 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XGS5TBSJ2B;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = avinash.ExpenseTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ExpenseTracker;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -988,15 +912,6 @@
 			buildConfigurations = (
 				E1572BD528B4006600800780 /* Debug */,
 				E1572BD628B4006600800780 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E1572BD728B4006600800780 /* Build configuration list for PBXNativeTarget "ExpenseTrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E1572BD828B4006600800780 /* Debug */,
-				E1572BD928B4006600800780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

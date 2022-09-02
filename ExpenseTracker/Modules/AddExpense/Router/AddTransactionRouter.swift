@@ -10,11 +10,23 @@ import UIKit
 
 final class AddTransactionRouter: AddTransactionPresenterToRouterProtocol {
     
-    static func createModule() -> UIViewController {
+    private let databaseManager: DatabaseManager
+    private let logger: Logger
+    
+    init(databaseManager: DatabaseManager,
+         logger: Logger) {
+        self.databaseManager = databaseManager
+        self.logger = logger
+    }
+    
+    static func createModule(databaseManager: DatabaseManager,
+                             logger: Logger) -> UIViewController {
         let controller = AddTransactionViewController()
-        let presenter = AddTransactionPresenter()
-        let interactor = AddTransactionInteractor()
-        let router = AddTransactionRouter()
+        let presenter = AddTransactionPresenter(logger: logger)
+        let interactor = AddTransactionInteractor(databaseManager: databaseManager,
+                                                  logger: logger)
+        let router = AddTransactionRouter(databaseManager: databaseManager,
+                                          logger: logger)
         
         presenter.view = controller
         presenter.interactor = interactor

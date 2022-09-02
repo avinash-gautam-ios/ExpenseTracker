@@ -134,7 +134,7 @@ extension ExpensesListViewController: ExpensesListPresenterToViewProtocol {
     }
     
     private func handleErrorState(_ error: Error) {
-        
+        //TODO: Show error state view here
     }
 }
 

@@ -40,6 +40,9 @@ protocol ExpensesListViewToPresenterProtocol: AnyObject {
 ///
 
 protocol ExpensesListPresenterToViewProtocol: AnyObject {
+    
+    var presenter: ExpensesListViewToPresenterProtocol? { get set }
+    
     /// update view state
     func didUpdateViewState(_ state: ExpensesListViewState)
 }
@@ -49,6 +52,9 @@ protocol ExpensesListPresenterToViewProtocol: AnyObject {
 ///
 
 protocol ExpensesListPresenterToInteractorProtocol: AnyObject {
+    
+    var presenter: ExpensesListInteractorToPresenterProtocol? { get set }
+    
     /// fetch transactions
     func fetchTransactions() throws -> [Transaction]
     
@@ -64,7 +70,8 @@ protocol ExpensesListPresenterToInteractorProtocol: AnyObject {
 ///
 
 protocol ExpensesListPresenterToRouterProtocol: AnyObject {
-    static func createModule() -> UIViewController
+    static func createModule(databaseManager: DatabaseManager,
+                             logger: Logger) -> UIViewController
     
     /// present the add transaction screen
     func presentAddTransaction(on controller: UIViewController)
